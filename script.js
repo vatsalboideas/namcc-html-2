@@ -162,6 +162,15 @@ $(document).ready(function () {
   //   }
   // });
 
+
+var nmaModalVideo = videojs('my-video-nma-modal');
+
+  // Stop video on modal hide
+  $('#nma-about-modal').on('hidden.bs.modal', function () {
+    nmaModalVideo.pause();
+    nmaModalVideo.currentTime(0); // Optional: rewind to beginning
+  });
+
   //schdule event hover effect
 
   const player = videojs('my-video-showreel-video');
