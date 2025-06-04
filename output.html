@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NMACC India - New York Weekend</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://vjs.zencdn.net/7.6.0/video-js.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./output.css" />
+  </head>
+  <body>
+    <main class="india-weekend">
+      <header class="sticky-top">
+        <nav
+          class="navbar navbar-light bg-white align-items-center justify-content-center"
+        >
+          <a class="navbar-brand" href="#">
+            <img
+              src="images/NMACC-NYC-LOGO.svg"
+              width="100"
+              height="125"
+              alt=""
+            />
+          </a>
+        </nav>
+      </header>
+      <section class="hero-section">
+        <picture>
+          <source media="(max-width:991px)" srcset="./images/mobile-bg.png" />
+          <img src="./images/hero.png" alt="hero image" class="hero-image" />
+        </picture>
+        <a href="#" class="hero-link">
+          <img
+            src="./images/cover-img.png"
+            alt="cover-img"
+            class="cover-image"
+          />
+        </a>
+      </section>
+      <section class="nma-section">
+        <div class="container">
+          <div class="row align-items-center bg-white">
+            <div class="p-lg-0 col-xs-12 col-lg-6">
+              <div class="nma-img-container">
+                <img
+                  src="./images/nita.webp"
+                  alt="Nita Mukesh Ambani Ma'am"
+                  class="nma-img"
+                />
+              </div>
+            </div>
+            <div class="p-lg-0 col-xs-12 col-lg-6">
+              <div class="text-container">
+                <div class="row m-0 w-100 text-row">
+                  <div class="col-12">
+                    <div class="above-text-line"></div>
+                  </div>
+                  <div class="col-12">
+                    <p class="second-text">
+                      "We are thrilled to bring the Nita Mukesh Ambani Cultural
+                      Centre India Weekend to New York City for the very first
+                      time! It is designed to be a global celebration of India’s
+                      cultural legacy – our art, crafts, music, dance, fashion,
+                      and food. At NMACC, our vision has always been to showcase
+                      the best of the world to India and bring the best of India
+                      to the world. This special weekend marks the first step
+                      forward on that journey, celebrating the spirit of India
+                      on one of the world’s most iconic stages – Lincoln Center.
+                      I am excited to share our rich traditions and legacy with
+                      New York City and the world.”
+                    </p>
+                  </div>
+                  <div class="col-12">
+                    <p class="third-text">- Nita M Ambani</p>
+                    <p class="fourth-text">Founder & Chairperson</p>
+                    <button
+                      data-toggle="modal"
+                      data-target="#nma-about-modal"
+                      class="nma-link primary-button"
+                    >
+                      <span> Click to View </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="nmacc-nw-video-section">
+        <div class="container p-lg-0">
+          <div class="text-up"></div>
+          <h2 class="nmacc-nw-video-title">
+            The Great Indian Musical: Civilization to Nation – David H. Koch
+            Theater
+          </h2>
+          <p class="namcc-nw-video-description">
+            The highly anticipated US premiere of India’s largest theatrical
+            production commences on 12th September. The show has a line-up of
+            exceptional Indian talent, along with a Tony & Emmy award-winning
+            crew and has been conceived and directed by Feroz Abbas Khan.
+          </p>
+          <p class="namcc-nw-video-description">
+            Blending dance, art, fashion, and music, this production is a
+            spectacular tribute to India’s past, present and future that travels
+            the country’s history from 5000 BC until its independence in 1947.
+            Featuring a cast of over 100 performers, opulent costumes and
+            larger-than-life sets, The Great Indian Musical is an unrivalled
+            theatrical experience. This marquee production will feature the
+            collaboration of great artists like Ajay-Atul (music), Mayuri
+            Upadhya, Vaibhavi Merchant, Samir & Arsh Tanna (choreography),
+            Donald Holder (Light), Neil Patel (scenic design), Gareth Owen
+            (sound design), John Narun (projection design), Renuka Pillai
+            (makeup designer). The visual spectacle will also feature costumes
+            designed by leading fashion designer Manish Malhotra. The show will
+            run will have a limited run of five performances.
+          </p>
+        </div>
+        <div class="nmacc-nw-video">
+          <video
+            id="my-video-showreel-video"
+            class="video-js vjs-default-skin"
+            controls
+            preload="auto"
+            autoplay
+            muted
+            data-setup='{"fluid": true}'
+            loop
+          >
+            <source
+              src="https://res.cloudinary.com/dvfoyj8cx/video/upload/v1749051645/nmacc/CTN_Promo__website_wof6dy.mp4"
+              type="video/mp4"
+            />
+            <p class="vjs-no-js">
+              To view this video please enable JavaScript, and consider
+              upgrading to a web browser that
+              <a href="https://videojs.com/html5-video-support/" target="_blank"
+                >supports HTML5 video</a
+              >.
+            </p>
+          </video>
+          <button id="mute-toggle" class="nmacc-nw-video-mute-button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-volume-mute-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06m7.137 2.096a.5.5 0 0 1 0 .708L12.207 8l1.647 1.646a.5.5 0 0 1-.708.708L11.5 8.707l-1.646 1.647a.5.5 0 0 1-.708-.708L10.793 8 9.146 6.354a.5.5 0 1 1 .708-.708L11.5 7.293l1.646-1.647a.5.5 0 0 1 .708 0"
+              />
+            </svg>
+          </button>
+        </div>
+      </section>
+      <section class="tgib-section">
+        <div class="container p-lg-0">
+          <div class="text-up"></div>
+          <h2 class="tgib-title">The Great Indian Bazaar – Damrosch Park</h2>
+          <p class="tgib-description">
+            Step into a vibrant celebration of Indian culture featuring food,
+            crafts, music, shopping, and community, all in the heart of
+            Manhattan.
+          </p>
+          <article class="tgib-section-section-3 accordian" id="accordion-2">
+            <div class="card">
+              <div class="card-1 collapse-two">
+                <div
+                  id="carouselIndicators-2"
+                  class="carousel slide custom-carousel"
+                  data-ride="carousel"
+                  data-interval="2500"
+                >
+                  <ol class="carousel-indicators">
+                    <li
+                      data-target="#carouselIndicators-2"
+                      data-slide-to="0"
+                      class="active"
+                    ></li>
+                    <li
+                      data-target="#carouselIndicators-2"
+                      data-slide-to="1"
+                    ></li>
+                  </ol>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <picture>
+                        <source
+                          media="(max-width:991px)"
+                          srcset="
+                            ./images/indian-bazaar/food/vikas-khanna-mobile.webp
+                          "
+                        />
+                        <img
+                          src="./images/indian-bazaar/food/vikas-khanna-card.webp"
+                          alt="hero image"
+                          class="festval-image-bg"
+                        />
+                      </picture>
+                    </div>
+                    <div class="carousel-item">
+                      <picture>
+                        <source
+                          media="(max-width:991px)"
+                          srcset="./images/indian-bazaar/food/food-mobile.webp"
+                        />
+                        <img
+                          src="./images/indian-bazaar/food/food-card.webp"
+                          alt="hero image"
+                          class="festval-image-bg"
+                        />
+                      </picture>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-container">
+                  <div
+                    class="row w-100 align-items-end align-items-lg-center h-100"
+                  >
+                    <div class="col-xs-12 col-lg-6 bg-pink-gradient">
+                      <h2 class="tc-title">Food</h2>
+                      <p class="tc-description">
+                        Best of Indian food pop-ups and a specially curated
+                        workshop by Michelin-starred celebrity chef Vikas Khanna
+                      </p>
+                      <button
+                        class="tc-ctv"
+                        data-toggle="modal"
+                        data-target="#tgib1"
+                      >
+                        <span> Click to View </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-lg-6"></div>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="tgib-section-section-3 accordian" id="accordion-3">
+            <div class="card">
+              <div class="card-1 collapse-three">
+                <div
+                  id="carouselIndicators-3"
+                  class="carousel slide"
+                  data-ride="carousel"
+                  data-interval="2500"
+                >
+                  <ol class="carousel-indicators">
+                    <li
+                      data-target="#carouselIndicators-3"
+                      data-slide-to="0"
+                      class="active"
+                    ></li>
+                    <li
+                      data-target="#carouselIndicators-3"
+                      data-slide-to="1"
+                    ></li>
+                    <li
+                      data-target="#carouselIndicators-3"
+                      data-slide-to="2"
+                    ></li>
+                    <li
+                      data-target="#carouselIndicators-3"
+                      data-slide-to="3"
+                    ></li>
+                  </ol>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <picture>
+                        <source
+                          media="(max-width:991px)"
+                          srcset="
+                            ./images/indian-bazaar/concerts/shreya-mobile.webp
+                          "
+                        />
+                        <img
+                          src="./images/indian-bazaar/concerts/shreya-card.webp"
+                          alt="hero image"
+                          class="festval-image-bg"
+                        />
+                      </picture>
+                    </div>
+                    <div class="carousel-item">
+                      <picture>
+                        <source
+                          media="(max-width:991px)"
+                          srcset="
+                            ./images/indian-bazaar/concerts/shankar-mobile.webp
+                          "
+                        />
+                        <img
+                          src="./images/indian-bazaar/concerts/shankar-card.webp"
+                          alt="hero image"
+                          class="festval-image-bg"
+                        />
+                      </picture>
+                    </div>
+
+                    <div class="carousel-item">
+                      <picture>
+                        <source
+                          media="(max-width:991px)"
+                          srcset="./images/indian-bazaar/music/dj-mobile.webp"
+                        />
+                        <img
+                          src="./images/indian-bazaar/music/dj-card.webp"
+                          alt="hero image"
+                          class="festval-image-bg"
+                        />
+                      </picture>
+                    </div>
+                    <div class="carousel-item">
+                      <picture>
+                        <source
+                          media="(max-width:991px)"
+                          srcset="
+                            ./images/indian-bazaar/yoga-dance/shamak-dawar-mobile.webp
+                          "
+                        />
+                        <img
+                          src="./images/indian-bazaar/yoga-dance/shamak-card.webp"
+                          alt="hero image"
+                          class="festval-image-bg"
+                        />
+                      </picture>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-container">
+                  <div
+                    class="row w-100 align-items-end align-items-lg-center h-100"
+                  >
+                    <div class="col-xs-12 col-lg-6 bg-pink-gradient">
+                      <h2 class="tc-title">Music & Dance</h2>
+                      <p class="tc-description">
+                        A series of musical performances showcasing some of
+                        India’s finest artists and Bollywood dance workshops
+                      </p>
+
+                      <button
+                        class="tc-ctv"
+                        data-toggle="modal"
+                        data-target="#tgib1"
+                      >
+                        <span> Click to View </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-lg-6"></div>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="tgib-section-section-3 accordian" id="accordion-4">
+            <div class="card">
+              <div class="card-1 collapse-four">
+                <div
+                  id="carouselIndicators-4"
+                  class="carousel slide"
+                  data-ride="carousel"
+                  data-interval="2500"
+                >
+                  <ol class="carousel-indicators">
+                    <li
+                      data-target="#carouselIndicators-4"
+                      data-slide-to="0"
+                      class="active"
+                    ></li>
+                    <li
+                      data-target="#carouselIndicators-4"
+                      data-slide-to="1"
+                    ></li>
+                  </ol>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <picture>
+                        <source
+                          media="(max-width:991px)"
+                          srcset="
+                            ./images/indian-bazaar/yoga-dance/eddie-mobile.webp
+                          "
+                        />
+                        <img
+                          src="./images/indian-bazaar/yoga-dance/eddie-card.webp"
+                          alt="hero image"
+                          class="festval-image-bg"
+                        />
+                      </picture>
+                    </div>
+                    <div class="carousel-item">
+                      <picture>
+                        <source
+                          media="(max-width:991px)"
+                          srcset="
+                            ./images/indian-bazaar/spiritual/gopal-das-mobile.webp
+                          "
+                        />
+                        <img
+                          src="./images/indian-bazaar/spiritual/gopal-das-card.webp"
+                          alt="hero image"
+                          class="festval-image-bg"
+                        />
+                      </picture>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-container">
+                  <div
+                    class="row w-100 align-items-end align-items-lg-center h-100"
+                  >
+                    <div class="col-xs-12 col-lg-6 bg-pink-gradient">
+                      <h2 class="tc-title">Yoga & Wellness</h2>
+                      <p class="tc-description">
+                        Daily Yoga and meditation workshops with renowned
+                        experts
+                      </p>
+
+                      <button
+                        class="tc-ctv"
+                        data-toggle="modal"
+                        data-target="#tgib1"
+                      >
+                        <span> Click to View </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-lg-6"></div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="tgib-section-section-3 accordian" id="accordion-6">
+            <div class="card">
+              <div class="card-1 collapse-six">
+                <div
+                  id="carouselIndicators-6"
+                  class="carousel slide"
+                  data-ride="carousel"
+                  data-interval="2500"
+                >
+                  <ol class="carousel-indicators">
+                    <li
+                      data-target="#carouselIndicators-6"
+                      data-slide-to="0"
+                      class="active"
+                    ></li>
+                    <li
+                      data-target="#carouselIndicators-6"
+                      data-slide-to="1"
+                    ></li>
+                    <li
+                      data-target="#carouselIndicators-6"
+                      data-slide-to="2"
+                    ></li>
+                  </ol>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <picture>
+                        <source
+                          media="(max-width:991px)"
+                          srcset="
+                            ./images/indian-bazaar/retail/gift-mobile.webp
+                          "
+                        />
+                        <img
+                          src="./images/indian-bazaar/retail/gift-card.webp"
+                          alt="hero image"
+                          class="festval-image-bg"
+                        />
+                      </picture>
+                    </div>
+                    <div class="carousel-item">
+                      <picture>
+                        <source
+                          media="(max-width:991px)"
+                          srcset="
+                            ./images/indian-bazaar/retail/jewellery-mobile.webp
+                          "
+                        />
+                        <img
+                          src="./images/indian-bazaar/retail/jewellery-card.webp"
+                          alt="hero image"
+                          class="festval-image-bg"
+                        />
+                      </picture>
+                    </div>
+                    <div class="carousel-item">
+                      <picture>
+                        <source
+                          media="(max-width:991px)"
+                          srcset="
+                            ./images/indian-bazaar/retail/store-mobile.webp
+                          "
+                        />
+                        <img
+                          src="./images/indian-bazaar/retail/store-card.webp"
+                          alt="hero image"
+                          class="festval-image-bg"
+                        />
+                      </picture>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-container">
+                  <div
+                    class="row w-100 align-items-end align-items-lg-center h-100"
+                  >
+                    <div class="col-xs-12 col-lg-6 bg-pink-gradient">
+                      <h2 class="tc-title">Retail</h2>
+                      <p class="tc-description">
+                        A highly curated mix of the best of Indian crafts and
+                        luxury – everything you love about shopping in India
+                        comes to New York City!
+                      </p>
+
+                      <button
+                        class="tc-ctv"
+                        data-toggle="modal"
+                        data-target="#tgib1"
+                      >
+                        <span> Click to View </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-lg-6"></div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="nma-section">
+        <div class="container">
+          <div class="row align-items-center bg-white">
+            <div class="p-lg-0 col-xs-12 col-lg-6">
+              <div class="nma-img-container">
+                <img
+                  src="./images/nmacc.jpg"
+                  alt="Nita Mukesh Ambani Ma'am"
+                  class="nma-img"
+                />
+              </div>
+            </div>
+            <div class="p-lg-0 col-xs-12 col-lg-6">
+              <div class="text-container">
+                <div
+                  class="row m-0 w-100 justify-content-center align-items-center text-row"
+                >
+                  <div class="col-12">
+                    <div class="above-text-line"></div>
+                    <h2 class="nma-title">About NMACC</h2>
+                  </div>
+                  <div class="col-12">
+                    <p class="second-text">
+                      The Nita Mukesh Ambani Cultural Centre (NMACC) is a
+                      first-of-its-kind, multi-disciplinary space in the sphere
+                      of arts, located in the heart of Mumbai, India. Since its
+                      opening in March 2023, the Cultural Centre has staged more
+                      than 1,500 shows featuring over 7,000 artists across
+                      venues, welcoming a total of more than two million guests.
+                      NMACC has been featured in the international publication
+                      Madame Figaro as one of the seven leading cultural centres
+                      of the world.
+                    </p>
+                    <p class="second-text">
+                      NMACC goes global with the ‘NMACC India Weekend’ in New
+                      York City. Stay tuned!
+                      <a>&lt;click here to know more&gt;</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="faq-section">
+        <section class="container">
+          <div class="text-up"></div>
+          <h2 class="title">FAQs</h2>
+          <article class="faq-box">
+            <div class="accordion" id="faq-accordion">
+              <div class="card">
+                <button
+                  class="faq-button"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">Is NMACC opening in NYC?</h2>
+                    <span class="right-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-chevron-right"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+
+                <div
+                  id="collapseOne"
+                  class="collapse show"
+                  aria-labelledby="headingOne"
+                  data-parent="#faq-accordion"
+                >
+                  <div class="card-body">
+                    The first edition of the NMACC India Weekend takes forward
+                    the vision of bringing the best of India to the world with a
+                    three-day cultural showcase! The one-of-its-kind event
+                    celebrates the finest of Indian performing arts, fashion,
+                    music, wellness, and cuisine with a host of exciting
+                    presentations. It will take place at the Lincoln Center for
+                    the Performing Arts from September 12–14, 2025.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <button
+                  class="faq-button collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapse-2"
+                  aria-expanded="false"
+                  aria-controls="collapse-2"
+                >
+                  <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                      What is the NMACC India Weekend in New York City?
+                    </h2>
+                    <span class="right-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-chevron-right"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+
+                <div
+                  id="collapse-2"
+                  class="collapse"
+                  aria-labelledby="headingOne"
+                  data-parent="#faq-accordion"
+                >
+                  <div class="card-body">
+                    NMACC India Weekend is a three-day cultural showcase
+                    celebrating the finest of Indian performing arts, fashion,
+                    music, wellness, and cuisine. It will be held from September
+                    12–14, 2025 at David H. Koch Theater and Damrosch
+                    Park,Lincoln Center for the Performing Arts, New York City.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <button
+                  class="faq-button collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapse-3"
+                  aria-expanded="true"
+                  aria-controls="collapse-3"
+                >
+                  <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                      When and where is the NMACC India Weekend happening?
+                    </h2>
+                    <span class="right-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-chevron-right"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+
+                <div
+                  id="collapse-3"
+                  class="collapse"
+                  aria-labelledby="headingOne"
+                  data-parent="#faq-accordion"
+                >
+                  <div class="card-body">
+                    NMACC India Weekend will take place from September 12-14,
+                    2025 at David H. Koch Theater and Damrosch Park, Lincoln
+                    Center for the Performing Arts, New York City. We look
+                    forward to welcoming you!
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <button
+                  class="faq-button collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapse-4"
+                  aria-expanded="true"
+                  aria-controls="collapse-4"
+                >
+                  <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                      What is the highlight of the NMACC India Weekend?
+                    </h2>
+                    <span class="right-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-chevron-right"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+
+                <div
+                  id="collapse-4"
+                  class="collapse"
+                  aria-labelledby="headingOne"
+                  data-parent="#faq-accordion"
+                >
+                  <div class="card-body">
+                    The NMACC India Weekend will premiere ‘The Great Indian
+                    Musical: Civilization to Nation,’ India’s largest ever
+                    theatrical production – amongst other thoughtfully curated
+                    cultural presentations. It will also feature a ‘Great Indian
+                    Bazaar’ - where guests will be introduced to the finest
+                    Indian fashion and textiles, authentic Indian flavours, as
+                    well as dance, yoga and music experiences.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <button
+                  class="faq-button collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapse-5"
+                  aria-expanded="true"
+                  aria-controls="collapse-5"
+                >
+                  <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                      What is 'The Great Indian Musical: Civilization to Nation'
+                      about?
+                    </h2>
+                    <span class="right-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-chevron-right"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+
+                <div
+                  id="collapse-5"
+                  class="collapse"
+                  aria-labelledby="headingOne"
+                  data-parent="#faq-accordion"
+                >
+                  <div class="card-body">
+                    India's largest theatrical production ‘The Great Indian
+                    Musical: Civilization to Nation’ is a spectacular tribute to
+                    India’s past, present and future —blending dance, art,
+                    fashion, and music. It travels the country’s history from
+                    5000 BC until its independence in 1947.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <button
+                  class="faq-button collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapse-6"
+                  aria-expanded="true"
+                  aria-controls="collapse-6"
+                >
+                  <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">Who has directed the musical?</h2>
+                    <span class="right-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-chevron-right"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+
+                <div
+                  id="collapse-6"
+                  class="collapse"
+                  aria-labelledby="headingOne"
+                  data-parent="#faq-accordion"
+                >
+                  <div class="card-body">
+                    The musical is an NMACC presentation, conceived and directed
+                    by Feroz Abbas Khan, with music by Ajay-Atul, choreography
+                    by Mayuri Upadhya, Vaibhavi Merchant, Samir &amp; Arsh
+                    Tanna, and costumes by Manish Malhotra. .
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <button
+                  class="faq-button collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapse-7"
+                  aria-expanded="true"
+                  aria-controls="collapse-7"
+                >
+                  <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                      How long will the show run and how many performers are
+                      part of the musical?
+                    </h2>
+                    <span class="right-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-chevron-right"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+
+                <div
+                  id="collapse-7"
+                  class="collapse"
+                  aria-labelledby="headingOne"
+                  data-parent="#faq-accordion"
+                >
+                  <div class="card-body">
+                    The show will have a limited run of five performances. The
+                    production features a cast of over 100 performers, stunning
+                    costumes, and grand sets. We look forward to welcoming you!
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <button
+                  class="faq-button collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapse-8"
+                  aria-expanded="true"
+                  aria-controls="collapse-8"
+                >
+                  <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                      What can one expect at Damrosch Park during the weekend?
+                    </h2>
+                    <span class="right-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-chevron-right"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+
+                <div
+                  id="collapse-8"
+                  class="collapse"
+                  aria-labelledby="headingOne"
+                  data-parent="#faq-accordion"
+                >
+                  <div class="card-body">
+                    Damrosch Park will be transformed into a ‘Great Indian
+                    Bazaar’, showcasing: Indian fashion and textiles Swadesh
+                    Experience Store Culinary experiences Dance, yoga, and music
+                    sessions Bhajans and Gita readings Performances by Shankar
+                    Mahadevan, Shreya Ghoshal, Parthiv Gohil, and Rishab Sharma
+                    Phoolon Ki Holi and Retro Nights DJ set
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <button
+                  class="faq-button collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapse-8"
+                  aria-expanded="true"
+                  aria-controls="collapse-8"
+                >
+                  <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                      Who will conduct the wellness sessions?
+                    </h2>
+                    <span class="right-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-chevron-right"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+
+                <div
+                  id="collapse-8"
+                  class="collapse"
+                  aria-labelledby="headingOne"
+                  data-parent="#faq-accordion"
+                >
+                  <div class="card-body">
+                    Eddie Stern, a renowned wellness expert, will lead daily
+                    yoga workshops. We look forward to welcoming you!
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <button
+                  class="faq-button collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapse-9"
+                  aria-expanded="true"
+                  aria-controls="collapse-9"
+                >
+                  <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                      Will there be Bollywood-themed activities?
+                    </h2>
+                    <span class="right-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-chevron-right"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+
+                <div
+                  id="collapse-9"
+                  class="collapse"
+                  aria-labelledby="headingOne"
+                  data-parent="#faq-accordion"
+                >
+                  <div class="card-body">
+                    Yes, one of India's leading dance choreograophers, Shiamak
+                    Davar and his team will conduct signature Bollywood Dance
+                    Workshops.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <button
+                  class="faq-button collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapse-10"
+                  aria-expanded="true"
+                  aria-controls="collapse-10"
+                >
+                  <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                      When do the bookings open? How can I book tickets or get
+                      more information? How much does the ticket cost?
+                    </h2>
+                    <span class="right-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-chevron-right"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+
+                <div
+                  id="collapse-10"
+                  class="collapse"
+                  aria-labelledby="headingOne"
+                  data-parent="#faq-accordion"
+                >
+                  <div class="card-body">
+                    Thank you for your interest! Tickets go on sale soon. Stay
+                    tuned!
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+      </section>
+
+      <section class="emailer">
+        <div class="container">
+          <div
+            class="row justify-content-start justify-content-lg-end first-row"
+          >
+            <div class="col-12 col-lg-7">
+              <h2 class="first-left-text">
+                Be the first to know about the tickets
+              </h2>
+            </div>
+            <div class="col-12 col-lg-5">
+              <div class="right">
+                <input
+                  type="email"
+                  placeholder="Enter Your Email Address"
+                /><span class="sign-up">sign up <span></span></span>
+              </div>
+            </div>
+          </div>
+          <div class="privacy-text">
+            <label class="custom-checkbox">
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+            <p>
+              * I have read, understood, and accept the Nita Mukesh Ambani
+              Cultural Centre Privacy Policy and consent to the sharing of my
+              personal data with Nita Mukesh Ambani Cultural Centre for the
+              purpose of receiving promotions, other relevant information and
+              personalized services.
+            </p>
+          </div>
+        </div>
+      </section>
+      <footer class="footer">
+        <div class="container">
+          <h2>© Copyright Nita Mukesh Ambani Cultural Centre 2025</h2>
+        </div>
+      </footer>
+
+      <!-- modals section -- start -->
+
+      <div
+        class="modal fade bd-example-modal-xl nma-modal"
+        id="nma-about-modal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="nma-about-modal"
+        aria-hidden="true"
+      >
+        <div
+          class="modal-dialog modal-dialog-centered modal-xl"
+          role="document"
+        >
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <video
+                id="my-video-nma-modal"
+                class="video-js vjs-default-skin"
+                controls
+                loop
+                preload="auto"
+                data-setup='{"fluid": true}'
+              >
+                <source
+                  src="https://res.cloudinary.com/dvfoyj8cx/video/upload/v1749051253/nmacc/NMA_CTN_NYC_TEASER_10_APPROVED_VERSION-_4_dj1wfe.mp4"
+                  type="video/mp4"
+                />
+                <p class="vjs-no-js">
+                  To view this video please enable JavaScript, and consider
+                  upgrading to a web browser that
+                  <a
+                    href="https://videojs.com/html5-video-support/"
+                    target="_blank"
+                    >supports HTML5 video</a
+                  >.
+                </p>
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="modal fade bd-example-modal-xl tgib-modal"
+        id="tgib1"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="tgib1Title"
+        aria-hidden="true"
+      >
+        <div
+          class="modal-dialog modal-dialog-centered modal-xl"
+          role="document"
+        >
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <video
+                id="my-video"
+                class="video-js vjs-default-skin"
+                controls
+                loop
+                preload="auto"
+                data-setup='{"fluid": true}'
+              >
+                <source src="./video/sample-video.mp4" type="video/mp4" />
+                <p class="vjs-no-js">
+                  To view this video please enable JavaScript, and consider
+                  upgrading to a web browser that
+                  <a
+                    href="https://videojs.com/html5-video-support/"
+                    target="_blank"
+                    >supports HTML5 video</a
+                  >.
+                </p>
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- modals section -- end -->
+    </main>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://vjs.zencdn.net/7.6.0/video.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"
+      integrity="sha512-ZKNVEa7gi0Dz4Rq9jXcySgcPiK+5f01CqW+ZoKLLKr9VMXuCsw3RjWiv8ZpIOa0hxO79np7Ec8DDWALM0bDOaQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./output.js"></script>
+  </body>
+</html>
