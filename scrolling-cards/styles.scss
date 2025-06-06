@@ -15,6 +15,9 @@ $dark-gray: #212529;
 }
 
 .india-weekend {
+  .mobile-description{
+    display: none;
+  }
   .fullscreen-hover-card {
     position: relative;
     transition: 0.3s all ease;
@@ -244,6 +247,11 @@ $dark-gray: #212529;
 }
 @media screen and (max-width: 991px) {
   .india-weekend {
+    .mobile-description{
+      display: block;
+      padding: 30px;
+      font-size: px-to-rem(15, );
+    }
     .scrolling-cards {
       .sc-card-box {
         height: auto;
@@ -256,7 +264,9 @@ $dark-gray: #212529;
       }
     }
     .fullscreen-hover-card{
-
+.full-screen-card-image{
+  aspect-ratio: 3/4;
+}
       .hover-card{
         display: none;
     } 
