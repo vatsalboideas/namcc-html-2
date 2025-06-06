@@ -21,7 +21,7 @@ gsap.to(".horizontal", {
     pin: "#horizontal-scoll",
     scrub: true,
     invalidateOnRefresh: true,
-    markers: true,
+    // markers: true,
   },
 });
 
