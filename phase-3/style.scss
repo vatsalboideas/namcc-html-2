@@ -1,0 +1,361 @@
+$light-pink: #fdedf5;
+$dark-pink: #cc307e;
+$light-gray: #4b4847;
+$primary-color: #ff4aa0;
+$dark-gray: #212529;
+$button-pink: #c5299b;
+
+// Convert px to rem
+// @param {Number} $px - The pixel value to convert
+// @param {Number} $base - The base font size (default: 16px)
+//  @return {Number} rem value
+@function px-to-rem($px, $base: 16) {
+  @return ($px / $base) * 1rem;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.india-weekend {
+  .primary-button {
+    margin-top: px-to-rem(20);
+    transition: 0.3s all ease;
+    border: 1px solid $dark-pink;
+    padding: px-to-rem(24) px-to-rem(39);
+    text-transform: uppercase;
+    font-size: px-to-rem(14);
+    font-weight: 500;
+    line-height: px-to-rem(12);
+    letter-spacing: px-to-rem(2);
+    background: #fff;
+    position: relative;
+    outline: none;
+    color: #000000;
+    span {
+      z-index: 2;
+      position: relative;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 0%;
+      height: 100%;
+      background-color: $button-pink;
+      z-index: 0;
+      transition: width 0.4s ease;
+      z-index: 1;
+    }
+    &:hover {
+      color: #fff;
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+
+  .button-white {
+    color: #fff;
+    background-color: transparent;
+    border-color: #fff;
+    &:hover {
+      border-color: $button-pink;
+    }
+  }
+
+  .hero-section {
+    position: relative;
+    .hero-image {
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      object-position: bottom;
+    }
+  }
+  .full-width-card {
+    .row {
+      .col {
+        padding: 0;
+      }
+    }
+    margin-top: px-to-rem(130);
+    .full-width-card-image {
+      aspect-ratio: 1;
+      object-fit: cover;
+      object-position: center;
+    }
+    .full-width-card-description {
+      transform: translateY(px-to-rem(100));
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      background-color: $primary-color;
+      height: 100%;
+      padding: px-to-rem(50) px-to-rem(60);
+      color: #fff;
+      p {
+        margin: 0;
+        font-size: px-to-rem(16);
+        margin-bottom: px-to-rem(15);
+      }
+      a {
+        font-size: px-to-rem(14);
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      .first-box {
+        .card-title {
+          font-size: px-to-rem(32);
+          font-weight: 700;
+        }
+        .text-up {
+          width: 100px;
+          height: 1px;
+          background-color: #fff;
+          margin-bottom: px-to-rem(35);
+        }
+      }
+    }
+  }
+  .full-width-section {
+    margin-top: px-to-rem(200);
+    .card-title {
+      padding: 0 px-to-rem(100);
+      .text-up {
+        width: 100px;
+        height: 4px;
+        background-color: $dark-pink;
+      }
+      h2 {
+        margin-top: px-to-rem(37);
+        font-weight: 800;
+        font-size: px-to-rem(38);
+        line-height: 150%;
+        letter-spacing: px-to-rem(2);
+        color: $primary-color;
+      }
+    }
+    .fullscreen-hover-card {
+      position: relative;
+      transition: 0.3s all ease;
+
+      .full-screen-card-image {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+      }
+
+      .hover-card {
+        width: px-to-rem(550);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none; // Prevent mouse events when hidden
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $primary-color;
+        padding: px-to-rem(20) px-to-rem(16) px-to-rem(35);
+        color: #fff;
+        text-transform: uppercase;
+
+        .card-top {
+          h4 {
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            font-weight: 800;
+            font-size: px-to-rem(25);
+          }
+          h2 {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            font-size: px-to-rem(70);
+            font-weight: 800;
+          }
+        }
+
+        .card-middle {
+          margin-top: px-to-rem(30);
+          .card-middle-card-image {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+          }
+        }
+
+        .card-bottom {
+          margin-top: px-to-rem(30);
+          .card-description {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            h2,
+            h3 {
+              margin: 0;
+              padding: 0;
+              font-size: px-to-rem(20);
+            }
+            h2 {
+              font-weight: 800;
+              font-size: px-to-rem(24);
+            }
+            h3 {
+              font-weight: 600;
+              font-size: px-to-rem(24);
+            }
+          }
+        }
+      }
+
+      .primary-button {
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+      }
+
+      &:hover {
+        .hover-card {
+          opacity: 1;
+          visibility: visible;
+          pointer-events: auto;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .india-weekend {
+    .primary-button {
+      margin-top: px-to-rem(20);
+      padding: px-to-rem(6) px-to-rem(15);
+
+      font-size: px-to-rem(10);
+      letter-spacing: 0;
+    }
+    .hero-section {
+      .hero-image {
+        aspect-ratio: 3/4;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+    .full-width-card {
+      margin-top: px-to-rem(50);
+      .full-width-card-description {
+        transform: translateY(px-to-rem(0));
+        padding: px-to-rem(25) px-to-rem(20);
+        color: #fff;
+        p {
+          margin: 0;
+          font-size: px-to-rem(10);
+          margin-bottom: px-to-rem(15);
+        }
+        a {
+          font-size: px-to-rem(10);
+        }
+        .first-box {
+          .card-title {
+            font-size: px-to-rem(12);
+          }
+          .text-up {
+            width: 50px;
+            height: 1px;
+
+            margin-bottom: px-to-rem(15);
+          }
+        }
+      }
+    }
+    .full-width-section {
+      margin-top: px-to-rem(28);
+      .card-title {
+        padding: 0 px-to-rem(20);
+        .text-up {
+          width: px-to-rem(45);
+        }
+        h2 {
+          font-size: px-to-rem(12);
+          letter-spacing: px-to-rem(1);
+          margin-top: px-to-rem(8);
+        }
+      }
+      .fullscreen-hover-card {
+        margin-top: px-to-rem(30);
+        position: relative;
+        transition: 0.3s all ease;
+
+        .full-screen-card-image {
+          width: 100%;
+          height: auto;
+          aspect-ratio: auto;
+          object-fit: cover;
+        }
+
+        .hover-card {
+          width: 100%;
+          opacity: 1;
+          visibility: visible;
+          position: relative;
+          top: 0;
+          left: 0;
+          transform: translate(0, 0);
+          padding: px-to-rem(20) px-to-rem(13) px-to-rem(40);
+          .card-top {
+            h4 {
+              text-align: left;
+              font-size: px-to-rem(12);
+            }
+            h2 {
+              text-align: left;
+              font-size: px-to-rem(24);
+            }
+          }
+
+          .card-middle {
+            display: none;
+          }
+
+          .card-bottom {
+            margin-top: px-to-rem(20);
+            .card-description {
+              h2 {
+                font-size: px-to-rem(16);
+              }
+              h3 {
+                font-weight: 600;
+                font-size: px-to-rem(14);
+              }
+            }
+          }
+        }
+
+        .primary-button {
+          margin-top: px-to-rem(40);
+          position: relative;
+          left: 50%;
+          transform: translate(-50%);
+        }
+
+        &:hover {
+          .hover-card {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+          }
+        }
+      }
+    }
+  }
+}

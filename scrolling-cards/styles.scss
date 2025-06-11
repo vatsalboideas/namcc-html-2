@@ -15,7 +15,7 @@ $dark-gray: #212529;
 }
 
 .india-weekend {
-  .mobile-description{
+  .mobile-description {
     display: none;
   }
   .fullscreen-hover-card {
@@ -247,10 +247,10 @@ $dark-gray: #212529;
 }
 @media screen and (max-width: 991px) {
   .india-weekend {
-    .mobile-description{
+    .mobile-description {
       display: block;
       padding: 30px;
-      font-size: px-to-rem(15, );
+      font-size: px-to-rem(15);
     }
     .scrolling-cards {
       .sc-card-box {
@@ -263,57 +263,55 @@ $dark-gray: #212529;
         }
       }
     }
-    .fullscreen-hover-card{
-.full-screen-card-image{
-  aspect-ratio: 3/4;
-}
-      .hover-card{
+    .fullscreen-hover-card {
+      .full-screen-card-image {
+        aspect-ratio: 3/4;
+      }
+      .hover-card {
         display: none;
-    } 
-
-    } 
+      }
+    }
     #horizontal-scoll {
-      .horizontal-scoll-wrapper{
+      .horizontal-scoll-wrapper {
         padding: 0 20px;
-        .horizontal{
+        .horizontal {
           // display: flex;
           // align-items: center;
           // justify-content: center;
-          .card-wrapper{
-            .card{
+          .card-wrapper {
+            .card {
               width: 300px;
-              display: flex ;
+              display: flex;
               align-items: center;
               justify-content: center;
               background-color: transparent;
-              .card-bottom{
-                .card-titile{
-                  font-size: px-to-rem(14, );
+              .card-bottom {
+                .card-titile {
+                  font-size: px-to-rem(14);
                 }
-                .card-description{
-                  font-size: px-to-rem(12, );
+                .card-description {
+                  font-size: px-to-rem(12);
                 }
               }
             }
           }
         }
-        
       }
       .date-buttons {
         // right: 100px;
         right: unset;
         z-index: 20;
       }
-      .time-buttons{
+      .time-buttons {
         z-index: 20;
         left: 50%;
         top: 70px;
-        transform: translate(-50%,0);
+        transform: translate(-50%, 0);
         flex-direction: row;
         height: auto;
         width: auto;
         right: unset;
-        button{
+        button {
           writing-mode: horizontal-tb;
         }
       }
