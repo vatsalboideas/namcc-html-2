@@ -17,6 +17,14 @@
       href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -35,7 +43,7 @@
       <section class="container">
         <div class="full-width-card">
           <div class="row row-cols-1 row-cols-lg-2">
-            <div class="col">
+            <div class="col" data-aos="fade-down" data-aos-duration="3000">
               <div>
                 <img
                   src="./images/nita.png"
@@ -44,7 +52,12 @@
                 />
               </div>
             </div>
-            <div class="col">
+            <div
+              class="col"
+              data-aos="fade-up"
+              data-aos-easing="linear"
+              data-aos-duration="1500"
+            >
               <div class="full-width-card-description">
                 <div class="first-box">
                   <div class="text-up"></div>
@@ -83,7 +96,7 @@
           </h2>
         </div>
         <div class="fullscreen-hover-card" id="hoverSection">
-          <picture>
+          <!-- <picture>
             <source
               media="(max-width:991px)"
               srcset="./images/thumbnail-mobile.jpg"
@@ -93,18 +106,18 @@
               class="full-screen-card-image"
               srcset=""
             />
-          </picture>
+          </picture> -->
           <div class="hover-card" id="full-screen-hover-card">
             <div class="card-top">
               <h4>FRIDAY</h4>
               <h2>12.09</h2>
             </div>
-            <div class="card-middle">
-              <img
+            <div class="card-middle" >
+              <!-- <img
                 src="./images/thumbnail.png"
                 class="card-middle-card-image"
                 srcset=""
-              />
+              /> -->
             </div>
             <div class="card-bottom">
               <div class="card-description">
@@ -146,7 +159,10 @@
             </div>
             <div class="date-download-box">
               <button class="primary-button button-white">
-                <span> Download</span>
+                <span>buy now</span>
+              </button>
+              <button class="primary-button button-white">
+                <span>Download</span>
               </button>
             </div>
           </div>
@@ -155,11 +171,11 @@
           <div id="time-buttons" class="time-buttons">
             <!-- <button data-time="" class="active">All</button> -->
             <button data-time="day">
-              <span>morning</span>
+              <span>morning pass</span>
               <!-- <span>$$$</span> -->
             </button>
             <button data-time="night">
-              <span>evening</span>
+              <span>evening pass</span>
               <!-- <span>$$$</span> -->
             </button>
           </div>
@@ -1042,7 +1058,7 @@
       <section class="container">
         <div class="full-width-card">
           <div class="row row-cols-1 row-cols-lg-2">
-            <div class="col">
+            <div class="col" data-aos="fade-up" data-aos-duration="3000">
               <div>
                 <img
                   src="./images/nmacc.jpg"
@@ -1051,7 +1067,12 @@
                 />
               </div>
             </div>
-            <div class="col">
+            <div
+              class="col"
+              data-aos="fade-down"
+              data-aos-easing="linear"
+              data-aos-duration="1500"
+            >
               <div class="full-width-card-description">
                 <div class="first-box">
                   <div class="text-up"></div>
@@ -1101,13 +1122,13 @@
                     class="show-card-modal-image img-fluid"
                   />
                   <button
-                        type="button"
-                        class="close close-button-mobile d-block d-lg-none"
-                        data-dismiss="modal"
-                        aria-label="Close"
-                      >
-                        <img src="./images/close-pink.svg" alt="close-button" />
-                      </button>
+                    type="button"
+                    class="close close-button-mobile d-block d-lg-none"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <img src="./images/close-pink.svg" alt="close-button" />
+                  </button>
                 </div>
                 <div class="col col-12 col-lg-5">
                   <div class="show-card-modal-description">
@@ -1172,8 +1193,14 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="./js/three.min.js"></script>
 
     <script src="./js/hover-effect.js"></script>
+
+    <script>
+     
+    </script>
 
     <script src="./script.js"></script>
   </body>
