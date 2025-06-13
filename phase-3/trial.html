@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horizontal Scrolling Cards</title>
+    <title>Day & Night Horizontal Scrolling Cards</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
@@ -84,13 +84,15 @@
 
         .controls {
             position: absolute;
-            top: 2rem;
+            top: 1rem;
             left: 50%;
             transform: translateX(-50%);
             z-index: 100;
             display: flex;
-            gap: 2rem;
+            flex-direction: column;
+            gap: 1rem;
             align-items: center;
+            max-width: 90vw;
         }
 
         .navigation-buttons {
@@ -117,31 +119,98 @@
 
         .day-navigation {
             display: flex;
-            gap: 1rem;
+            gap: 2rem;
             background: rgba(255, 255, 255, 0.1);
-            padding: 0.5rem;
-            border-radius: 25px;
+            padding: 1rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
         }
 
-        .day-navigation button {
-            padding: 0.5rem 1rem;
+        .time-toggle-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .toggle-label {
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #fff;
+            text-align: center;
+        }
+
+        .time-toggle {
+            display: flex;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 25px;
+            padding: 0.3rem;
+            gap: 0.2rem;
+        }
+
+        .toggle-btn {
+            padding: 0.6rem 1.2rem;
             border: none;
             border-radius: 20px;
             background: transparent;
-            color: #fff;
+            color: rgba(255, 255, 255, 0.7);
             cursor: pointer;
             transition: all 0.3s ease;
             font-size: 0.9rem;
+            font-weight: 500;
         }
 
-        .day-navigation button:hover {
+        .toggle-btn:hover {
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+        .toggle-btn.active {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: #fff;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .day-toggle.active {
+            background: linear-gradient(45deg, #ffd700, #ff8c00);
+        }
+
+        .night-toggle.active {
+            background: linear-gradient(45deg, #2c3e50, #34495e);
+        }
+
+        .individual-days {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .day-btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            font-weight: 500;
+            min-width: 100px;
+        }
+
+        .day-btn:hover {
             background: rgba(255, 255, 255, 0.2);
             transform: translateY(-2px);
         }
 
-        .day-navigation button.active {
+        .day-btn.active {
             background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
             transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         }
 
         .horizontal-scroll-wrapper {
@@ -182,6 +251,16 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
+        .card.day-card {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 140, 0, 0.1));
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .card.night-card {
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.3), rgba(52, 73, 94, 0.2));
+            border: 1px solid rgba(52, 73, 94, 0.4);
+        }
+
         .card-top {
             height: 60%;
             overflow: hidden;
@@ -192,12 +271,21 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: #fff;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .card-img.day-bg {
+            background: linear-gradient(45deg, #ffd700, #ff8c00);
+        }
+
+        .card-img.night-bg {
+            background: linear-gradient(45deg, #2c3e50, #34495e);
         }
 
         .card-bottom {
@@ -209,7 +297,7 @@
         }
 
         .card-title {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin-bottom: 1rem;
             color: #fff;
         }
@@ -247,34 +335,23 @@
             }
             
             .controls {
+                padding: 0 1rem;
+            }
+            
+            .day-navigation {
                 flex-direction: column;
                 gap: 1rem;
             }
             
-            .anchor-nav {
-                flex-wrap: wrap;
-                gap: 1rem;
+            .individual-days {
+                justify-content: center;
             }
         }
     </style>
 </head>
 <body>
     <div id="page" class="site">
-        <header id="masthead" class="site-header">
-            <nav class="anchor-nav">
-                <a href="#intro" class="anchor">Home</a>
-                <a href="#day-12" class="anchor">Day 12</a>
-                <a href="#day-13" class="anchor">Day 13</a>
-                <a href="#day-14" class="anchor">Day 14</a>
-                <a href="#end" class="anchor">End</a>
-            </nav>
-        </header>
-
         <main id="content" class="site-content">
-            <section id="intro" class="full-screen">
-                <h1>Horizontal Scrolling Cards</h1>
-            </section>
-
             <section id="horizontal-scroll">
                 <div class="controls">
                     <div class="navigation-buttons">
@@ -283,164 +360,215 @@
                     </div>
                     
                     <div class="day-navigation">
-                        <button data-target="#day-12" class="day-btn active">Day 12</button>
-                        <button data-target="#day-13" class="day-btn">Day 13</button>
-                        <button data-target="#day-14" class="day-btn">Day 14</button>
+                        <!-- Common Day/Night Toggle -->
+                        <div class="time-toggle-group">
+                            <div class="toggle-label">View Mode</div>
+                            <div class="time-toggle">
+                                <button id="toggle-day" class="toggle-btn day-toggle active">🌅 Day</button>
+                                <button id="toggle-night" class="toggle-btn night-toggle">🌙 Night</button>
+                            </div>
+                        </div>
+
+                        <!-- Individual Day Buttons -->
+                        <div class="individual-days">
+                            <button data-target="#day-12-day" data-night-target="#day-12-night" class="day-btn active">Day 12</button>
+                            <button data-target="#day-13-day" data-night-target="#day-13-night" class="day-btn">Day 13</button>
+                            <button data-target="#day-14-day" data-night-target="#day-14-night" class="day-btn">Day 14</button>
+                        </div>
                     </div>
                 </div>
 
                 <div class="horizontal-scroll-wrapper">
                     <div class="horizontal">
                         <div class="card-wrapper" id="scrolling-card-wrapper">
-                            <!-- Day 12 Cards -->
-                            <div class="card" id="day-12">
+                            <!-- Day 12 - Day Cards -->
+                            <div class="card day-card" id="day-12-day">
                                 <div class="card-top">
-                                    <div class="card-img">Day 12 - Morning</div>
+                                    <div class="card-img day-bg">Day 12<br>Morning</div>
                                 </div>
                                 <div class="card-bottom">
-                                    <h2 class="card-title">Day 12 - Morning</h2>
-                                    <p class="card-description">Experience the beauty of morning activities with stunning views and peaceful moments.</p>
+                                    <h2 class="card-title">Day 12 - Morning Activities</h2>
+                                    <p class="card-description">Start your day with energizing morning activities, sunrise yoga, and healthy breakfast options.</p>
                                 </div>
                             </div>
 
-                            <div class="card">
+                            <div class="card day-card">
                                 <div class="card-top">
-                                    <div class="card-img">Workshop A</div>
+                                    <div class="card-img day-bg">Morning<br>Workshop</div>
                                 </div>
                                 <div class="card-bottom">
                                     <h2 class="card-title">Morning Workshop A</h2>
-                                    <p class="card-description">Join our interactive workshop focused on creative thinking and problem-solving techniques.</p>
+                                    <p class="card-description">Interactive workshop focused on creative thinking and problem-solving techniques in natural daylight.</p>
                                 </div>
                             </div>
 
-                            <div class="card">
+                            <div class="card day-card">
                                 <div class="card-top">
-                                    <div class="card-img">Session 1</div>
+                                    <div class="card-img day-bg">Lunch &<br>Session</div>
                                 </div>
                                 <div class="card-bottom">
-                                    <h2 class="card-title">Learning Session 1</h2>
-                                    <p class="card-description">Discover new skills and techniques in this comprehensive learning session.</p>
+                                    <h2 class="card-title">Lunch & Learning Session</h2>
+                                    <p class="card-description">Enjoy a delicious lunch followed by an afternoon learning session with expert speakers.</p>
                                 </div>
                             </div>
 
-                            <div class="card">
+                            <!-- Day 12 - Night Cards -->
+                            <div class="card night-card" id="day-12-night">
                                 <div class="card-top">
-                                    <div class="card-img">Evening 1</div>
+                                    <div class="card-img night-bg">Day 12<br>Evening</div>
                                 </div>
                                 <div class="card-bottom">
-                                    <h2 class="card-title">Day 12 - Evening</h2>
-                                    <p class="card-description">Wind down with evening activities and networking opportunities.</p>
+                                    <h2 class="card-title">Day 12 - Evening Activities</h2>
+                                    <p class="card-description">Wind down with evening activities, stargazing, and peaceful reflection time.</p>
                                 </div>
                             </div>
 
-                            <div class="card">
+                            <div class="card night-card">
                                 <div class="card-top">
-                                    <div class="card-img">Dinner</div>
+                                    <div class="card-img night-bg">Welcome<br>Dinner</div>
                                 </div>
                                 <div class="card-bottom">
                                     <h2 class="card-title">Welcome Dinner</h2>
-                                    <p class="card-description">Join us for a special welcome dinner with networking and entertainment.</p>
+                                    <p class="card-description">Join us for a special welcome dinner with networking, entertainment, and fine dining under the stars.</p>
                                 </div>
                             </div>
 
-                            <!-- Day 13 Cards -->
-                            <div class="card" id="day-13">
+                            <div class="card night-card">
                                 <div class="card-top">
-                                    <div class="card-img">Day 13 - Morning</div>
+                                    <div class="card-img night-bg">Night<br>Networking</div>
                                 </div>
                                 <div class="card-bottom">
-                                    <h2 class="card-title">Day 13 - Morning</h2>
-                                    <p class="card-description">Start your second day with energizing morning activities and fresh perspectives.</p>
+                                    <h2 class="card-title">Night Networking</h2>
+                                    <p class="card-description">Connect with fellow participants in a relaxed evening atmosphere with drinks and conversation.</p>
                                 </div>
                             </div>
 
-                            <div class="card">
+                            <!-- Day 13 - Day Cards -->
+                            <div class="card day-card" id="day-13-day">
                                 <div class="card-top">
-                                    <div class="card-img">Workshop B</div>
+                                    <div class="card-img day-bg">Day 13<br>Morning</div>
+                                </div>
+                                <div class="card-bottom">
+                                    <h2 class="card-title">Day 13 - Morning Fresh Start</h2>
+                                    <p class="card-description">Begin your second day with fresh energy, morning meditation, and outdoor activities.</p>
+                                </div>
+                            </div>
+
+                            <div class="card day-card">
+                                <div class="card-top">
+                                    <div class="card-img day-bg">Advanced<br>Workshop</div>
                                 </div>
                                 <div class="card-bottom">
                                     <h2 class="card-title">Advanced Workshop B</h2>
-                                    <p class="card-description">Take your skills to the next level with advanced techniques and expert guidance.</p>
+                                    <p class="card-description">Take your skills to the next level with advanced techniques and expert guidance in broad daylight.</p>
                                 </div>
                             </div>
 
-                            <div class="card">
+                            <div class="card day-card">
                                 <div class="card-top">
-                                    <div class="card-img">Session 2</div>
+                                    <div class="card-img day-bg">Master<br>Class</div>
                                 </div>
                                 <div class="card-bottom">
-                                    <h2 class="card-title">Masterclass Session</h2>
-                                    <p class="card-description">Learn from industry experts in this exclusive masterclass session.</p>
+                                    <h2 class="card-title">Afternoon Masterclass</h2>
+                                    <p class="card-description">Learn from industry experts in this exclusive afternoon masterclass session with hands-on activities.</p>
                                 </div>
                             </div>
 
-                            <div class="card">
+                            <!-- Day 13 - Night Cards -->
+                            <div class="card night-card" id="day-13-night">
                                 <div class="card-top">
-                                    <div class="card-img">Evening 2</div>
+                                    <div class="card-img night-bg">Day 13<br>Evening</div>
                                 </div>
                                 <div class="card-bottom">
-                                    <h2 class="card-title">Day 13 - Evening</h2>
-                                    <p class="card-description">Enjoy evening entertainment and social activities with fellow participants.</p>
+                                    <h2 class="card-title">Day 13 - Evening Entertainment</h2>
+                                    <p class="card-description">Enjoy evening entertainment, live music, and social activities with fellow participants.</p>
                                 </div>
                             </div>
 
-                            <div class="card">
+                            <div class="card night-card">
                                 <div class="card-top">
-                                    <div class="card-img">Party</div>
+                                    <div class="card-img night-bg">Celebration<br>Party</div>
                                 </div>
                                 <div class="card-bottom">
                                     <h2 class="card-title">Celebration Party</h2>
-                                    <p class="card-description">Celebrate achievements with music, dancing, and great company.</p>
+                                    <p class="card-description">Celebrate achievements with music, dancing, cocktails, and great company under the night sky.</p>
                                 </div>
                             </div>
 
-                            <!-- Day 14 Cards -->
-                            <div class="card" id="day-14">
+                            <div class="card night-card">
                                 <div class="card-top">
-                                    <div class="card-img">Day 14 - Morning</div>
+                                    <div class="card-img night-bg">Night<br>Games</div>
                                 </div>
                                 <div class="card-bottom">
-                                    <h2 class="card-title">Day 14 - Morning</h2>
-                                    <p class="card-description">Final day morning activities to consolidate your learning experience.</p>
+                                    <h2 class="card-title">Night Games & Activities</h2>
+                                    <p class="card-description">Participate in fun night games, trivia, and team building activities in a relaxed atmosphere.</p>
                                 </div>
                             </div>
 
-                            <div class="card">
+                            <!-- Day 14 - Day Cards -->
+                            <div class="card day-card" id="day-14-day">
                                 <div class="card-top">
-                                    <div class="card-img">Final Workshop</div>
+                                    <div class="card-img day-bg">Day 14<br>Morning</div>
+                                </div>
+                                <div class="card-bottom">
+                                    <h2 class="card-title">Day 14 - Final Morning</h2>
+                                    <p class="card-description">Final day morning activities to consolidate your learning experience and prepare for departure.</p>
+                                </div>
+                            </div>
+
+                            <div class="card day-card">
+                                <div class="card-top">
+                                    <div class="card-img day-bg">Final<br>Workshop</div>
                                 </div>
                                 <div class="card-bottom">
                                     <h2 class="card-title">Final Workshop</h2>
-                                    <p class="card-description">Wrap up your learning journey with a comprehensive final workshop.</p>
+                                    <p class="card-description">Wrap up your learning journey with a comprehensive final workshop and skill assessment.</p>
                                 </div>
                             </div>
 
-                            <div class="card">
+                            <div class="card day-card">
                                 <div class="card-top">
-                                    <div class="card-img">Graduation</div>
+                                    <div class="card-img day-bg">Graduation<br>Ceremony</div>
                                 </div>
                                 <div class="card-bottom">
                                     <h2 class="card-title">Graduation Ceremony</h2>
-                                    <p class="card-description">Celebrate your achievements in the graduation ceremony.</p>
+                                    <p class="card-description">Celebrate your achievements in the graduation ceremony with certificate presentation.</p>
                                 </div>
                             </div>
 
-                            <div class="card">
+                            <!-- Day 14 - Night Cards -->
+                            <div class="card night-card" id="day-14-night">
                                 <div class="card-top">
-                                    <div class="card-img">Farewell</div>
+                                    <div class="card-img night-bg">Farewell<br>Evening</div>
                                 </div>
                                 <div class="card-bottom">
                                     <h2 class="card-title">Farewell Evening</h2>
-                                    <p class="card-description">Say goodbye with a memorable farewell evening event.</p>
+                                    <p class="card-description">Say goodbye with a memorable farewell evening event, sharing memories and future plans.</p>
+                                </div>
+                            </div>
+
+                            <div class="card night-card">
+                                <div class="card-top">
+                                    <div class="card-img night-bg">Final<br>Dinner</div>
+                                </div>
+                                <div class="card-bottom">
+                                    <h2 class="card-title">Final Dinner</h2>
+                                    <p class="card-description">Enjoy a special final dinner with all participants, celebrating the journey and new friendships.</p>
+                                </div>
+                            </div>
+
+                            <div class="card night-card">
+                                <div class="card-top">
+                                    <div class="card-img night-bg">Night<br>Reflection</div>
+                                </div>
+                                <div class="card-bottom">
+                                    <h2 class="card-title">Night Reflection</h2>
+                                    <p class="card-description">End your journey with quiet reflection time, looking back on experiences and planning ahead.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-
-            <section id="end" class="full-screen">
-                <h1>Thank You!</h1>
             </section>
         </main>
     </div>
@@ -459,28 +587,55 @@
         const prevButton = document.getElementById("prev-btn");
         const nextButton = document.getElementById("next-btn");
         const dayButtons = document.querySelectorAll(".day-btn");
+        const toggleDayBtn = document.getElementById("toggle-day");
+        const toggleNightBtn = document.getElementById("toggle-night");
+        
+        let currentMode = 'day'; // 'day' or 'night'
 
-        // Main navigation functionality
-        document.querySelectorAll(".anchor").forEach(anchor => {
-            anchor.addEventListener("click", function(e) {
-                e.preventDefault();
-                const targetSelector = e.target.getAttribute("href");
-                scrollToTarget(targetSelector);
-                
-                // Update day button active state
-                if (targetSelector.includes("day-")) {
-                    updateDayButtonActive(targetSelector);
-                }
-            });
+        // Day/Night toggle functionality
+        toggleDayBtn.addEventListener("click", function() {
+            currentMode = 'day';
+            updateToggleButtons();
+            // Navigate to current day's day section
+            const activeDay = document.querySelector('.day-btn.active');
+            if (activeDay) {
+                const target = activeDay.getAttribute('data-target');
+                scrollToTarget(target);
+            }
         });
 
-        // Day navigation buttons
+        toggleNightBtn.addEventListener("click", function() {
+            currentMode = 'night';
+            updateToggleButtons();
+            // Navigate to current day's night section
+            const activeDay = document.querySelector('.day-btn.active');
+            if (activeDay) {
+                const target = activeDay.getAttribute('data-night-target');
+                scrollToTarget(target);
+            }
+        });
+
+        function updateToggleButtons() {
+            toggleDayBtn.classList.toggle('active', currentMode === 'day');
+            toggleNightBtn.classList.toggle('active', currentMode === 'night');
+        }
+
+        // Individual day buttons - MODIFIED TO AUTO SWITCH TO DAY MODE
         dayButtons.forEach(btn => {
             btn.addEventListener("click", function(e) {
                 e.preventDefault();
-                const targetSelector = btn.getAttribute("data-target");
-                scrollToTarget(targetSelector);
-                updateDayButtonActive(targetSelector);
+                
+                // Update active day button
+                dayButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // AUTOMATICALLY SWITCH TO DAY MODE when any date button is clicked
+                currentMode = 'day';
+                updateToggleButtons();
+                
+                // Always navigate to the day target (not night)
+                const target = btn.getAttribute('data-target');
+                scrollToTarget(target);
             });
         });
 
@@ -506,10 +661,24 @@
             });
         }
 
-        function updateDayButtonActive(targetSelector) {
+        function updateTimeButtonActive(activeTarget) {
+            // Update day button based on target
             dayButtons.forEach(btn => {
-                btn.classList.toggle("active", btn.getAttribute("data-target") === targetSelector);
+                const dayTarget = btn.getAttribute('data-target');
+                const nightTarget = btn.getAttribute('data-night-target');
+                
+                if (dayTarget === activeTarget) {
+                    btn.classList.add('active');
+                    currentMode = 'day';
+                } else if (nightTarget === activeTarget) {
+                    btn.classList.add('active');
+                    currentMode = 'night';
+                } else {
+                    btn.classList.remove('active');
+                }
             });
+            
+            updateToggleButtons();
         }
 
         // Create horizontal scroll animation
@@ -520,7 +689,7 @@
                 scrollTrigger: {
                     trigger: "#horizontal-scroll",
                     pin: true,
-                    start: "top top",
+                    start: "center center",
                     scrub: 1,
                     end: () => `+=${scrollingCardWrapper.scrollWidth - window.innerWidth}`,
                     invalidateOnRefresh: true,
@@ -535,20 +704,21 @@
 
         // Update active states based on scroll position
         function updateActiveStatesOnScroll(progress) {
-            const dayCards = document.querySelectorAll(".card[id]");
+            const targetCards = document.querySelectorAll(".card[id]");
             const totalWidth = scrollingCardWrapper.scrollWidth - window.innerWidth;
             const currentPosition = progress * totalWidth;
             
-            let activeDay = "#day-12"; // default
+            let activeTarget = "#day-12-day"; // default
             
-            dayCards.forEach(card => {
+            targetCards.forEach(card => {
                 const cardPosition = card.offsetLeft;
                 if (currentPosition >= cardPosition - 100) { // 100px threshold
-                    activeDay = "#" + card.id;
+                    activeTarget = "#" + card.id;
                 }
             });
             
-            updateDayButtonActive(activeDay);
+            // Update active button based on current target
+            updateTimeButtonActive(activeTarget);
         }
 
         // Navigation buttons functionality
@@ -569,13 +739,13 @@
 
         prevButton?.addEventListener("click", () => {
             const currentProgress = currentScrollTrigger ? currentScrollTrigger.progress : 0;
-            const newProgress = Math.max(0, currentProgress - 0.2);
+            const newProgress = Math.max(0, currentProgress - 0.15);
             scrollToPosition(newProgress);
         });
 
         nextButton?.addEventListener("click", () => {
             const currentProgress = currentScrollTrigger ? currentScrollTrigger.progress : 0;
-            const newProgress = Math.min(1, currentProgress + 0.2);
+            const newProgress = Math.min(1, currentProgress + 0.15);
             scrollToPosition(newProgress);
         });
 

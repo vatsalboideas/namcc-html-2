@@ -107,7 +107,7 @@
               srcset=""
             />
           </picture>
-          <a href="#">
+        
             <div class="hover-card" id="full-screen-hover-card">
               <div class="card-top">
                 <h4>FRIDAY</h4>
@@ -129,12 +129,12 @@
                   <h2>location:</h2>
                   <h3>12pm onwards</h3>
                 </div>
+                <button class="primary-button button-white">
+                  <span>book now</span>
+                </button>
               </div>
-              <button class="primary-button button-white">
-                <span>book now</span>
-              </button>
             </div>
-          </a>
+
         </div>
       </section>
       <section class="full-width-section">
@@ -147,85 +147,88 @@
             Manhattan.
           </p>
         </div>
-        <div id="horizontal-scoll">
+        <div id="horizontal-scroll">
           <div class="navigation-buttons">
             <button id="prev-btn">&lt;</button>
             <button id="next-btn">&gt;</button>
           </div>
-          <div id="date-buttons" class="date-buttons">
-            <div class="date-buttons-box">
-              <button
-                data-date="12"
-                data-target="#day-12"
-                class="day-btn active"
-              >
-                12
-              </button>
-              <button data-date="13" data-target="#day-13" class="day-btn">
-                13
-              </button>
-              <button data-date="14" data-target="#day-14" class="day-btn">
-                14
-              </button>
-              <h3>Sept</h3>
+          <div class="controls-time">
+            <div class="time-toggle-group">
+              <div class="time-toggle">
+                <button id="toggle-day" class="toggle-btn day-toggle active">
+                  MORNING PASS $$$
+                  <span>( 10:00 am - 2:00 pm )</span>
+                </button>
+                <button id="toggle-night" class="toggle-btn night-toggle">
+                  EVENING PASS $$$
+                  <span>( 4:00 pm - 9:00 pm )</span>
+                </button>
+              </div>
             </div>
-            <div class="date-download-box">
-              <button class="primary-button button-white">
-                <span>buy now</span>
-              </button>
-              <button class="primary-button button-white">
-                <span>Download</span>
-              </button>
+          </div>
+          <div class="controls">
+            <div class="day-navigation">
+              <!-- Common Day/Night Toggle -->
+
+              <!-- Individual Day Buttons -->
+              <div class="individual-days">
+                <button
+                  data-target="#day-12-day"
+                  data-night-target="#day-12-night"
+                  class="day-btn active"
+                >
+                  12
+                </button>
+                <button
+                  data-target="#day-13-day"
+                  data-night-target="#day-13-night"
+                  class="day-btn"
+                >
+                  13
+                </button>
+                <button
+                  data-target="#day-14-day"
+                  data-night-target="#day-14-night"
+                  class="day-btn"
+                >
+                  14
+                </button>
+                <h3>Sept</h3>
+              </div>
+              <div class="buttons">
+                <button class="primary-button"><span>Buy Now</span></button>
+                <button class="primary-button"><span>Download</span></button>
+              </div>
             </div>
           </div>
 
-          <!-- Time Buttons -->
-          <div id="time-buttons" class="time-buttons">
-            <!-- <button data-time="" class="active">All</button> -->
-            <button data-time="day">
-              <span>morning pass</span>
-              <!-- <span>$$$</span> -->
-            </button>
-            <button data-time="night">
-              <span>evening pass</span>
-              <!-- <span>$$$</span> -->
-            </button>
-          </div>
-
-          <div class="horizontal-scoll-wrapper">
+          <div class="horizontal-scroll-wrapper">
             <div class="horizontal">
               <div class="card-wrapper" id="scrolling-card-wrapper">
-                <!-- id="actual-cards" -->
-                <div
-                  class="card"
-                  id="day-12"
-                  data-date="12"
-                  data-time="day"
-                 
-                >
+                <!-- Day 12 - Day Cards -->
+                <div class="card day-card" id="day-12-day">
                   <div class="card-top">
                     <img
                       src="./images/jewellery-card.png"
-                      alt="card"
-                      class="card-img"
+                      alt="card-image"
+                      class="img-fluid card-img"
                     />
                   </div>
                   <div class="card-bottom">
-                    <h2 class="card-title">Jewelery</h2>
+                    <h2 class="card-title">Jewellery</h2>
                     <div class="card-description">
                       <h3>Venue:<span>Damrosch Park</span></h3>
                       <h3>Time:<span>12pm onwards</span></h3>
                     </div>
                   </div>
-                  <div class="on-click-card"></div>
                 </div>
-                <div class="card" id="day-12" data-date="12" data-time="day"  data-toggle="modal"
-                  data-target="#exampleModalCenter">
+
+                <div class="card day-card" data-toggle="modal" data-target="#exampleModalCenter">
                   <div class="card-top">
                     <img
                       src="./images/gopal-card.png"
-                      alt="card"
-                      class="card-img"
+                      alt="card-image"
+                      class="img-fluid card-img"
                     />
                   </div>
                   <div class="card-bottom">
@@ -234,18 +237,15 @@
                       <h3>Venue:<span>Damrosch Park</span></h3>
                       <h3>Time:<span>12pm onwards</span></h3>
                     </div>
-                    <!--<div class="card-description">
-                      <h3>Venue:<span>Damrosch Park</span></h3>
-                      <h3>Time:<span>12pm onwards</span></h3>
-                    </div> -->
                   </div>
                 </div>
-                <div class="card" id="day-12" data-date="12" data-time="day">
+
+                <div class="card day-card">
                   <div class="card-top">
                     <img
                       src="./images/food-card.png"
-                      alt="card"
-                      class="card-img"
+                      alt="card-image"
+                      class="img-fluid card-img"
                     />
                   </div>
                   <div class="card-bottom">
@@ -256,12 +256,31 @@
                     </div>
                   </div>
                 </div>
-                <div class="card" id="day-12" data-date="12" data-time="day">
+
+                <!-- Day 12 - Night Cards -->
+                <div class="card night-card" id="day-12-night">
+                  <div class="card-top">
+                    <img
+                      src="./images/jewellery-card.png"
+                      alt="card-image"
+                      class="img-fluid card-img"
+                    />
+                  </div>
+                  <div class="card-bottom">
+                    <h2 class="card-title">Jewellery</h2>
+                    <div class="card-description">
+                      <h3>Venue:<span>Damrosch Park</span></h3>
+                      <h3>Time:<span>12pm onwards</span></h3>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card night-card">
                   <div class="card-top">
                     <img
                       src="./images/food-card.png"
-                      alt="card"
-                      class="card-img"
+                      alt="card-image"
+                      class="img-fluid card-img"
                     />
                   </div>
                   <div class="card-bottom">
@@ -272,12 +291,13 @@
                     </div>
                   </div>
                 </div>
-                <div class="card" id="day-12" data-date="12" data-time="day">
+
+                <div class="card night-card">
                   <div class="card-top">
                     <img
                       src="./images/food-card.png"
-                      alt="card"
-                      class="card-img"
+                      alt="card-image"
+                      class="img-fluid card-img"
                     />
                   </div>
                   <div class="card-bottom">
@@ -288,500 +308,164 @@
                     </div>
                   </div>
                 </div>
-                <div class="card" id="day-12" data-date="12" data-time="day">
+
+                <!-- Day 13 - Day Cards -->
+                <div class="card day-card" id="day-13-day">
                   <div class="card-top">
-                    <img
-                      src="./images/food-card.png"
-                      alt="card"
-                      class="card-img"
-                    />
+                    <div class="card-img day-bg">Day 13<br />Morning</div>
                   </div>
                   <div class="card-bottom">
-                    <h2 class="card-title">Food</h2>
-                    <div class="card-description">
-                      <h3>Venue:<span>Damrosch Park</span></h3>
-                      <h3>Time:<span>12pm onwards</span></h3>
-                    </div>
+                    <h2 class="card-title">Day 13 - Morning Fresh Start</h2>
+                    <p class="card-description">
+                      Begin your second day with fresh energy, morning
+                      meditation, and outdoor activities.
+                    </p>
                   </div>
                 </div>
-                <div class="card" id="day-12" data-date="12" data-time="night">
+
+                <div class="card day-card">
                   <div class="card-top">
-                    <img
-                      src="./images/food-card.png"
-                      alt="card"
-                      class="card-img"
-                    />
+                    <div class="card-img day-bg">Advanced<br />Workshop</div>
                   </div>
                   <div class="card-bottom">
-                    <h2 class="card-title">Food</h2>
-                    <div class="card-description">
-                      <h3>Venue:<span>Damrosch Park</span></h3>
-                      <h3>Time:<span>12pm onwards</span></h3>
-                    </div>
+                    <h2 class="card-title">Advanced Workshop B</h2>
+                    <p class="card-description">
+                      Take your skills to the next level with advanced
+                      techniques and expert guidance in broad daylight.
+                    </p>
                   </div>
                 </div>
-                <div class="card" id="day-12" data-date="12" data-time="night">
+
+                <div class="card day-card">
                   <div class="card-top">
-                    <img
-                      src="./images/food-card.png"
-                      alt="card"
-                      class="card-img"
-                    />
+                    <div class="card-img day-bg">Master<br />Class</div>
                   </div>
                   <div class="card-bottom">
-                    <h2 class="card-title">Food</h2>
-                    <div class="card-description">
-                      <h3>Venue:<span>Damrosch Park</span></h3>
-                      <h3>Time:<span>12pm onwards</span></h3>
-                    </div>
+                    <h2 class="card-title">Afternoon Masterclass</h2>
+                    <p class="card-description">
+                      Learn from industry experts in this exclusive afternoon
+                      masterclass session with hands-on activities.
+                    </p>
                   </div>
                 </div>
-                <div class="card" id="day-12" data-date="12" data-time="night">
+
+                <!-- Day 13 - Night Cards -->
+                <div class="card night-card" id="day-13-night">
                   <div class="card-top">
-                    <img
-                      src="./images/food-card.png"
-                      alt="card"
-                      class="card-img"
-                    />
+                    <div class="card-img night-bg">Day 13<br />Evening</div>
                   </div>
                   <div class="card-bottom">
-                    <h2 class="card-title">Food</h2>
-                    <div class="card-description">
-                      <h3>Venue:<span>Damrosch Park</span></h3>
-                      <h3>Time:<span>12pm onwards</span></h3>
-                    </div>
+                    <h2 class="card-title">Day 13 - Evening Entertainment</h2>
+                    <p class="card-description">
+                      Enjoy evening entertainment, live music, and social
+                      activities with fellow participants.
+                    </p>
                   </div>
                 </div>
-                <div class="card" id="day-12" data-date="12" data-time="night">
+
+                <div class="card night-card">
                   <div class="card-top">
-                    <img
-                      src="./images/food-card.png"
-                      alt="card"
-                      class="card-img"
-                    />
+                    <div class="card-img night-bg">Celebration<br />Party</div>
                   </div>
                   <div class="card-bottom">
-                    <h2 class="card-title">Food</h2>
-                    <div class="card-description">
-                      <h3>Venue:<span>Damrosch Park</span></h3>
-                      <h3>Time:<span>12pm onwards</span></h3>
-                    </div>
+                    <h2 class="card-title">Celebration Party</h2>
+                    <p class="card-description">
+                      Celebrate achievements with music, dancing, cocktails, and
+                      great company under the night sky.
+                    </p>
                   </div>
                 </div>
-                <div class="card" id="day-12" data-date="12" data-time="night">
+
+                <div class="card night-card">
                   <div class="card-top">
-                    <img
-                      src="./images/food-card.png"
-                      alt="card"
-                      class="card-img"
-                    />
+                    <div class="card-img night-bg">Night<br />Games</div>
                   </div>
                   <div class="card-bottom">
-                    <h2 class="card-title">Food</h2>
-                    <div class="card-description">
-                      <h3>Venue:<span>Damrosch Park</span></h3>
-                      <h3>Time:<span>12pm onwards</span></h3>
-                    </div>
+                    <h2 class="card-title">Night Games & Activities</h2>
+                    <p class="card-description">
+                      Participate in fun night games, trivia, and team building
+                      activities in a relaxed atmosphere.
+                    </p>
                   </div>
                 </div>
-                <div class="card" id="day-12" data-date="12" data-time="night">
+
+                <!-- Day 14 - Day Cards -->
+                <div class="card day-card" id="day-14-day">
                   <div class="card-top">
-                    <img
-                      src="./images/food-card.png"
-                      alt="card"
-                      class="card-img"
-                    />
+                    <div class="card-img day-bg">Day 14<br />Morning</div>
                   </div>
                   <div class="card-bottom">
-                    <h2 class="card-title">Food</h2>
-                    <div class="card-description">
-                      <h3>Venue:<span>Damrosch Park</span></h3>
-                      <h3>Time:<span>12pm onwards</span></h3>
-                    </div>
+                    <h2 class="card-title">Day 14 - Final Morning</h2>
+                    <p class="card-description">
+                      Final day morning activities to consolidate your learning
+                      experience and prepare for departure.
+                    </p>
                   </div>
                 </div>
-                <div class="card" id="day-13" data-date="13" data-time="day">
+
+                <div class="card day-card">
                   <div class="card-top">
-                    <img
-                      src="./images/food-card.png"
-                      alt="card"
-                      class="card-img"
-                    />
+                    <div class="card-img day-bg">Final<br />Workshop</div>
                   </div>
                   <div class="card-bottom">
-                    <h2 class="card-title">Food</h2>
-                    <div class="card-description">
-                      <h3>Venue:<span>Damrosch Park</span></h3>
-                      <h3>Time:<span>12pm onwards</span></h3>
-                    </div>
+                    <h2 class="card-title">Final Workshop</h2>
+                    <p class="card-description">
+                      Wrap up your learning journey with a comprehensive final
+                      workshop and skill assessment.
+                    </p>
                   </div>
                 </div>
-                <div class="card" id="day-13" data-date="13" data-time="day">
+
+                <div class="card day-card">
                   <div class="card-top">
-                    <img
-                      src="./images/food-card.png"
-                      alt="card"
-                      class="card-img"
-                    />
+                    <div class="card-img day-bg">Graduation<br />Ceremony</div>
                   </div>
                   <div class="card-bottom">
-                    <h2 class="card-title">Food</h2>
-                    <div class="card-description">
-                      <h3>Venue:<span>Damrosch Park</span></h3>
-                      <h3>Time:<span>12pm onwards</span></h3>
-                    </div>
+                    <h2 class="card-title">Graduation Ceremony</h2>
+                    <p class="card-description">
+                      Celebrate your achievements in the graduation ceremony
+                      with certificate presentation.
+                    </p>
                   </div>
                 </div>
-                <div class="card" id="day-13" data-date="13" data-time="day">
+
+                <!-- Day 14 - Night Cards -->
+                <div class="card night-card" id="day-14-night">
                   <div class="card-top">
-                    <img
-                      src="./images/food-card.png"
-                      alt="card"
-                      class="card-img"
-                    />
+                    <div class="card-img night-bg">Farewell<br />Evening</div>
                   </div>
                   <div class="card-bottom">
-                    <h2 class="card-title">Food</h2>
-                    <div class="card-description">
-                      <h3>Venue:<span>Damrosch Park</span></h3>
-                      <h3>Time:<span>12pm onwards</span></h3>
-                    </div>
+                    <h2 class="card-title">Farewell Evening</h2>
+                    <p class="card-description">
+                      Say goodbye with a memorable farewell evening event,
+                      sharing memories and future plans.
+                    </p>
                   </div>
                 </div>
-                <div class="card" id="day-13" data-date="13" data-time="day">
+
+                <div class="card night-card">
                   <div class="card-top">
-                    <img
-                      src="./images/food-card.png"
-                      alt="card"
-                      class="card-img"
-                    />
+                    <div class="card-img night-bg">Final<br />Dinner</div>
                   </div>
                   <div class="card-bottom">
-                    <h2 class="card-title">Food</h2>
-                    <div class="card-description">
-                      <h3>Venue:<span>Damrosch Park</span></h3>
-                      <h3>Time:<span>12pm onwards</span></h3>
-                    </div>
+                    <h2 class="card-title">Final Dinner</h2>
+                    <p class="card-description">
+                      Enjoy a special final dinner with all participants,
+                      celebrating the journey and new friendships.
+                    </p>
                   </div>
                 </div>
-                <div class="card" id="day-13" data-date="13" data-time="day">
+
+                <div class="card night-card">
                   <div class="card-top">
-                    <img
-                      src="./images/food-card.png"
-                      alt="card"
-                      class="card-img"
-                    />
+                    <div class="card-img night-bg">Night<br />Reflection</div>
                   </div>
                   <div class="card-bottom">
-                    <h2 class="card-title">Food</h2>
-                    <div class="card-description">
-                      <h3>Venue:<span>Damrosch Park</span></h3>
-                      <h3>Time:<span>12pm onwards</span></h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="card" id="day-13" data-date="13" data-time="day">
-                  <div class="card-top">
-                    <img
-                      src="./images/food-card.png"
-                      alt="card"
-                      class="card-img"
-                    />
-                  </div>
-                  <div class="card-bottom">
-                    <h2 class="card-title">Food</h2>
-                    <div class="card-description">
-                      <h3>Venue:<span>Damrosch Park</span></h3>
-                      <h3>Time:<span>12pm onwards</span></h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="card" id="day-13" data-date="13" data-time="night">
-                  <div class="card-top">
-                    <img
-                      src="./images/food-card.png"
-                      alt="card"
-                      class="card-img"
-                    />
-                  </div>
-                  <div class="card-bottom">
-                    <h2 class="card-title">Food</h2>
-                    <div class="card-description">
-                      <h3>Venue:<span>Damrosch Park</span></h3>
-                      <h3>Time:<span>12pm onwards</span></h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="card" id="day-13" data-date="13" data-time="night">
-                  <div class="card-top">
-                    <img
-                      src="./images/food-card.png"
-                      alt="card"
-                      class="card-img"
-                    />
-                  </div>
-                  <div class="card-bottom">
-                    <h2 class="card-title">Food</h2>
-                    <div class="card-description">
-                      <h3>Venue:<span>Damrosch Park</span></h3>
-                      <h3>Time:<span>12pm onwards</span></h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="card" id="day-13" data-date="13" data-time="night">
-                  <div class="card-top">
-                    <img
-                      src="./images/food-card.png"
-                      alt="card"
-                      class="card-img"
-                    />
-                  </div>
-                  <div class="card-bottom">
-                    <h2 class="card-title">Food</h2>
-                    <div class="card-description">
-                      <h3>Venue:<span>Damrosch Park</span></h3>
-                      <h3>Time:<span>12pm onwards</span></h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="card" id="day-13" data-date="13" data-time="night">
-                  <div class="card-top">
-                    <img
-                      src="./images/food-card.png"
-                      alt="card"
-                      class="card-img"
-                    />
-                  </div>
-                  <div class="card-bottom">
-                    <h2 class="card-title">Food</h2>
-                    <div class="card-description">
-                      <h3>Venue:<span>Damrosch Park</span></h3>
-                      <h3>Time:<span>12pm onwards</span></h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="card" id="day-13" data-date="13" data-time="night">
-                  <div class="card-top">
-                    <img
-                      src="./images/food-card.png"
-                      alt="card"
-                      class="card-img"
-                    />
-                  </div>
-                  <div class="card-bottom">
-                    <h2 class="card-title">Food</h2>
-                    <div class="card-description">
-                      <h3>Venue:<span>Damrosch Park</span></h3>
-                      <h3>Time:<span>12pm onwards</span></h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="card" id="day-13" data-date="13" data-time="night">
-                  <div class="card-top">
-                    <img
-                      src="./images/food-card.png"
-                      alt="card"
-                      class="card-img"
-                    />
-                  </div>
-                  <div class="card-bottom">
-                    <h2 class="card-title">Food</h2>
-                    <div class="card-description">
-                      <h3>Venue:<span>Damrosch Park</span></h3>
-                      <h3>Time:<span>12pm onwards</span></h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="card" id="day-14" data-date="14" data-time="day">
-                  <div class="card-top">
-                    <img
-                      src="./images/food-card.png"
-                      alt="card"
-                      class="card-img"
-                    />
-                  </div>
-                  <div class="card-bottom">
-                    <h2 class="card-title">Food</h2>
-                    <div class="card-description">
-                      <h3>Venue:<span>Damrosch Park</span></h3>
-                      <h3>Time:<span>12pm onwards</span></h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="card" id="day-14" data-date="14" data-time="day">
-                  <div class="card-top">
-                    <img
-                      src="./images/food-card.png"
-                      alt="card"
-                      class="card-img"
-                    />
-                  </div>
-                  <div class="card-bottom">
-                    <h2 class="card-title">Food</h2>
-                    <div class="card-description">
-                      <h3>Venue:<span>Damrosch Park</span></h3>
-                      <h3>Time:<span>12pm onwards</span></h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="card" id="day-14" data-date="14" data-time="day">
-                  <div class="card-top">
-                    <img
-                      src="./images/food-card.png"
-                      alt="card"
-                      class="card-img"
-                    />
-                  </div>
-                  <div class="card-bottom">
-                    <h2 class="card-title">Food</h2>
-                    <div class="card-description">
-                      <h3>Venue:<span>Damrosch Park</span></h3>
-                      <h3>Time:<span>12pm onwards</span></h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="card" id="day-14" data-date="14" data-time="day">
-                  <div class="card-top">
-                    <img
-                      src="./images/food-card.png"
-                      alt="card"
-                      class="card-img"
-                    />
-                  </div>
-                  <div class="card-bottom">
-                    <h2 class="card-title">Food</h2>
-                    <div class="card-description">
-                      <h3>Venue:<span>Damrosch Park</span></h3>
-                      <h3>Time:<span>12pm onwards</span></h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="card" id="day-14" data-date="14" data-time="day">
-                  <div class="card-top">
-                    <img
-                      src="./images/food-card.png"
-                      alt="card"
-                      class="card-img"
-                    />
-                  </div>
-                  <div class="card-bottom">
-                    <h2 class="card-title">Food</h2>
-                    <div class="card-description">
-                      <h3>Venue:<span>Damrosch Park</span></h3>
-                      <h3>Time:<span>12pm onwards</span></h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="card" id="day-14" data-date="14" data-time="day">
-                  <div class="card-top">
-                    <img
-                      src="./images/food-card.png"
-                      alt="card"
-                      class="card-img"
-                    />
-                  </div>
-                  <div class="card-bottom">
-                    <h2 class="card-title">Food</h2>
-                    <div class="card-description">
-                      <h3>Venue:<span>Damrosch Park</span></h3>
-                      <h3>Time:<span>12pm onwards</span></h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="card" id="day-14" data-date="14" data-time="night">
-                  <div class="card-top">
-                    <img
-                      src="./images/food-card.png"
-                      alt="card"
-                      class="card-img"
-                    />
-                  </div>
-                  <div class="card-bottom">
-                    <h2 class="card-title">Food</h2>
-                    <div class="card-description">
-                      <h3>Venue:<span>Damrosch Park</span></h3>
-                      <h3>Time:<span>12pm onwards</span></h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="card" id="day-14" data-date="14" data-time="night">
-                  <div class="card-top">
-                    <img
-                      src="./images/food-card.png"
-                      alt="card"
-                      class="card-img"
-                    />
-                  </div>
-                  <div class="card-bottom">
-                    <h2 class="card-title">Food</h2>
-                    <div class="card-description">
-                      <h3>Venue:<span>Damrosch Park</span></h3>
-                      <h3>Time:<span>12pm onwards</span></h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="card" id="day-14" data-date="14" data-time="night">
-                  <div class="card-top">
-                    <img
-                      src="./images/food-card.png"
-                      alt="card"
-                      class="card-img"
-                    />
-                  </div>
-                  <div class="card-bottom">
-                    <h2 class="card-title">Food</h2>
-                    <div class="card-description">
-                      <h3>Venue:<span>Damrosch Park</span></h3>
-                      <h3>Time:<span>12pm onwards</span></h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="card" id="day-14" data-date="14" data-time="night">
-                  <div class="card-top">
-                    <img
-                      src="./images/food-card.png"
-                      alt="card"
-                      class="card-img"
-                    />
-                  </div>
-                  <div class="card-bottom">
-                    <h2 class="card-title">Food</h2>
-                    <div class="card-description">
-                      <h3>Venue:<span>Damrosch Park</span></h3>
-                      <h3>Time:<span>12pm onwards</span></h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="card" id="day-14" data-date="14" data-time="night">
-                  <div class="card-top">
-                    <img
-                      src="./images/food-card.png"
-                      alt="card"
-                      class="card-img"
-                    />
-                  </div>
-                  <div class="card-bottom">
-                    <h2 class="card-title">Food</h2>
-                    <div class="card-description">
-                      <h3>Venue:<span>Damrosch Park</span></h3>
-                      <h3>Time:<span>12pm onwards</span></h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="card" id="day-14" data-date="14" data-time="night">
-                  <div class="card-top">
-                    <img
-                      src="./images/food-card.png"
-                      alt="card"
-                      class="card-img"
-                    />
-                  </div>
-                  <div class="card-bottom">
-                    <h2 class="card-title">Food</h2>
-                    <div class="card-description">
-                      <h3>Venue:<span>Damrosch Park</span></h3>
-                      <h3>Time:<span>12pm onwards</span></h3>
-                    </div>
+                    <h2 class="card-title">Night Reflection</h2>
+                    <p class="card-description">
+                      End your journey with quiet reflection time, looking back
+                      on experiences and planning ahead.
+                    </p>
                   </div>
                 </div>
               </div>
