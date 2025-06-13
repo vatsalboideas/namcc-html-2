@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizontal Scrolling Cards</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #1a1a1a;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Header Navigation */
+        #masthead {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 9999;
+            padding: 1rem 0;
+        }
+
+        .anchor-nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .anchor-nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .anchor-nav a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .anchor-nav a.active {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+        }
+
+        /* Intro Section */
+        #intro {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+        }
+
+        #intro h1 {
+            font-size: 4rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Horizontal Scroll Section */
+        #horizontal-scroll {
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .controls {
+            position: absolute;
+            top: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .navigation-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .navigation-buttons button {
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .navigation-buttons button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        .day-navigation {
+            display: flex;
+            gap: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem;
+            border-radius: 25px;
+        }
+
+        .day-navigation button {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 20px;
+            background: transparent;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .day-navigation button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .day-navigation button.active {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            transform: translateY(-2px);
+        }
+
+        .horizontal-scroll-wrapper {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .horizontal {
+            display: flex;
+            height: 100%;
+            will-change: transform;
+        }
+
+        .card-wrapper {
+            display: flex;
+            gap: 2rem;
+            padding: 2rem;
+            align-items: center;
+            height: 100%;
+        }
+
+        .card {
+            flex-shrink: 0;
+            width: 350px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-top {
+            height: 60%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #fff;
+        }
+
+        .card-bottom {
+            padding: 1.5rem;
+            height: 40%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .card-description {
+            font-size: 0.9rem;
+            line-height: 1.4;
+            color: rgba(255, 255, 255, 0.8);
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+
+        /* End Section */
+        #end {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        }
+
+        #end h1 {
+            font-size: 4rem;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .card {
+                width: 280px;
+                height: 400px;
+            }
+            
+            .controls {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .anchor-nav {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="page" class="site">
+        <header id="masthead" class="site-header">
+            <nav class="anchor-nav">
+                <a href="#intro" class="anchor">Home</a>
+                <a href="#day-12" class="anchor">Day 12</a>
+                <a href="#day-13" class="anchor">Day 13</a>
+                <a href="#day-14" class="anchor">Day 14</a>
+                <a href="#end" class="anchor">End</a>
+            </nav>
+        </header>
+
+        <main id="content" class="site-content">
+            <section id="intro" class="full-screen">
+                <h1>Horizontal Scrolling Cards</h1>
+            </section>
+
+            <section id="horizontal-scroll">
+                <div class="controls">
+                    <div class="navigation-buttons">
+                        <button id="prev-btn">&lt;</button>
+                        <button id="next-btn">&gt;</button>
+                    </div>
+                    
+                    <div class="day-navigation">
+                        <button data-target="#day-12" class="day-btn active">Day 12</button>
+                        <button data-target="#day-13" class="day-btn">Day 13</button>
+                        <button data-target="#day-14" class="day-btn">Day 14</button>
+                    </div>
+                </div>
+
+                <div class="horizontal-scroll-wrapper">
+                    <div class="horizontal">
+                        <div class="card-wrapper" id="scrolling-card-wrapper">
+                            <!-- Day 12 Cards -->
+                            <div class="card" id="day-12">
+                                <div class="card-top">
+                                    <div class="card-img">Day 12 - Morning</div>
+                                </div>
+                                <div class="card-bottom">
+                                    <h2 class="card-title">Day 12 - Morning</h2>
+                                    <p class="card-description">Experience the beauty of morning activities with stunning views and peaceful moments.</p>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-top">
+                                    <div class="card-img">Workshop A</div>
+                                </div>
+                                <div class="card-bottom">
+                                    <h2 class="card-title">Morning Workshop A</h2>
+                                    <p class="card-description">Join our interactive workshop focused on creative thinking and problem-solving techniques.</p>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-top">
+                                    <div class="card-img">Session 1</div>
+                                </div>
+                                <div class="card-bottom">
+                                    <h2 class="card-title">Learning Session 1</h2>
+                                    <p class="card-description">Discover new skills and techniques in this comprehensive learning session.</p>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-top">
+                                    <div class="card-img">Evening 1</div>
+                                </div>
+                                <div class="card-bottom">
+                                    <h2 class="card-title">Day 12 - Evening</h2>
+                                    <p class="card-description">Wind down with evening activities and networking opportunities.</p>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-top">
+                                    <div class="card-img">Dinner</div>
+                                </div>
+                                <div class="card-bottom">
+                                    <h2 class="card-title">Welcome Dinner</h2>
+                                    <p class="card-description">Join us for a special welcome dinner with networking and entertainment.</p>
+                                </div>
+                            </div>
+
+                            <!-- Day 13 Cards -->
+                            <div class="card" id="day-13">
+                                <div class="card-top">
+                                    <div class="card-img">Day 13 - Morning</div>
+                                </div>
+                                <div class="card-bottom">
+                                    <h2 class="card-title">Day 13 - Morning</h2>
+                                    <p class="card-description">Start your second day with energizing morning activities and fresh perspectives.</p>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-top">
+                                    <div class="card-img">Workshop B</div>
+                                </div>
+                                <div class="card-bottom">
+                                    <h2 class="card-title">Advanced Workshop B</h2>
+                                    <p class="card-description">Take your skills to the next level with advanced techniques and expert guidance.</p>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-top">
+                                    <div class="card-img">Session 2</div>
+                                </div>
+                                <div class="card-bottom">
+                                    <h2 class="card-title">Masterclass Session</h2>
+                                    <p class="card-description">Learn from industry experts in this exclusive masterclass session.</p>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-top">
+                                    <div class="card-img">Evening 2</div>
+                                </div>
+                                <div class="card-bottom">
+                                    <h2 class="card-title">Day 13 - Evening</h2>
+                                    <p class="card-description">Enjoy evening entertainment and social activities with fellow participants.</p>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-top">
+                                    <div class="card-img">Party</div>
+                                </div>
+                                <div class="card-bottom">
+                                    <h2 class="card-title">Celebration Party</h2>
+                                    <p class="card-description">Celebrate achievements with music, dancing, and great company.</p>
+                                </div>
+                            </div>
+
+                            <!-- Day 14 Cards -->
+                            <div class="card" id="day-14">
+                                <div class="card-top">
+                                    <div class="card-img">Day 14 - Morning</div>
+                                </div>
+                                <div class="card-bottom">
+                                    <h2 class="card-title">Day 14 - Morning</h2>
+                                    <p class="card-description">Final day morning activities to consolidate your learning experience.</p>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-top">
+                                    <div class="card-img">Final Workshop</div>
+                                </div>
+                                <div class="card-bottom">
+                                    <h2 class="card-title">Final Workshop</h2>
+                                    <p class="card-description">Wrap up your learning journey with a comprehensive final workshop.</p>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-top">
+                                    <div class="card-img">Graduation</div>
+                                </div>
+                                <div class="card-bottom">
+                                    <h2 class="card-title">Graduation Ceremony</h2>
+                                    <p class="card-description">Celebrate your achievements in the graduation ceremony.</p>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-top">
+                                    <div class="card-img">Farewell</div>
+                                </div>
+                                <div class="card-bottom">
+                                    <h2 class="card-title">Farewell Evening</h2>
+                                    <p class="card-description">Say goodbye with a memorable farewell evening event.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="end" class="full-screen">
+                <h1>Thank You!</h1>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Register GSAP plugins
+        gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+        // Variables
+        let horizontalSection = document.querySelector(".horizontal");
+        let scrollingCardWrapper = document.getElementById("scrolling-card-wrapper");
+        let tween;
+        let currentScrollTrigger;
+
+        // Navigation elements
+        const prevButton = document.getElementById("prev-btn");
+        const nextButton = document.getElementById("next-btn");
+        const dayButtons = document.querySelectorAll(".day-btn");
+
+        // Main navigation functionality
+        document.querySelectorAll(".anchor").forEach(anchor => {
+            anchor.addEventListener("click", function(e) {
+                e.preventDefault();
+                const targetSelector = e.target.getAttribute("href");
+                scrollToTarget(targetSelector);
+                
+                // Update day button active state
+                if (targetSelector.includes("day-")) {
+                    updateDayButtonActive(targetSelector);
+                }
+            });
+        });
+
+        // Day navigation buttons
+        dayButtons.forEach(btn => {
+            btn.addEventListener("click", function(e) {
+                e.preventDefault();
+                const targetSelector = btn.getAttribute("data-target");
+                scrollToTarget(targetSelector);
+                updateDayButtonActive(targetSelector);
+            });
+        });
+
+        function scrollToTarget(targetSelector) {
+            let targetElem = document.querySelector(targetSelector);
+            let y = targetElem;
+            
+            if (targetElem && scrollingCardWrapper.contains(targetElem)) {
+                // If target is within the horizontal scroll section
+                let totalScroll = tween.scrollTrigger.end - tween.scrollTrigger.start;
+                let totalMovement = scrollingCardWrapper.scrollWidth - window.innerWidth;
+                let targetPosition = targetElem.offsetLeft;
+                y = Math.round(tween.scrollTrigger.start + (targetPosition / totalMovement) * totalScroll);
+            }
+            
+            gsap.to(window, {
+                scrollTo: {
+                    y: y,
+                    autoKill: false
+                },
+                duration: 1,
+                ease: "power2.out"
+            });
+        }
+
+        function updateDayButtonActive(targetSelector) {
+            dayButtons.forEach(btn => {
+                btn.classList.toggle("active", btn.getAttribute("data-target") === targetSelector);
+            });
+        }
+
+        // Create horizontal scroll animation
+        function createHorizontalScroll() {
+            tween = gsap.to(scrollingCardWrapper, {
+                x: () => -(scrollingCardWrapper.scrollWidth - window.innerWidth),
+                ease: "none",
+                scrollTrigger: {
+                    trigger: "#horizontal-scroll",
+                    pin: true,
+                    start: "top top",
+                    scrub: 1,
+                    end: () => `+=${scrollingCardWrapper.scrollWidth - window.innerWidth}`,
+                    invalidateOnRefresh: true,
+                    onUpdate: self => {
+                        updateActiveStatesOnScroll(self.progress);
+                    }
+                }
+            });
+            
+            currentScrollTrigger = tween.scrollTrigger;
+        }
+
+        // Update active states based on scroll position
+        function updateActiveStatesOnScroll(progress) {
+            const dayCards = document.querySelectorAll(".card[id]");
+            const totalWidth = scrollingCardWrapper.scrollWidth - window.innerWidth;
+            const currentPosition = progress * totalWidth;
+            
+            let activeDay = "#day-12"; // default
+            
+            dayCards.forEach(card => {
+                const cardPosition = card.offsetLeft;
+                if (currentPosition >= cardPosition - 100) { // 100px threshold
+                    activeDay = "#" + card.id;
+                }
+            });
+            
+            updateDayButtonActive(activeDay);
+        }
+
+        // Navigation buttons functionality
+        function scrollToPosition(progress) {
+            if (currentScrollTrigger) {
+                const scrollPosition = currentScrollTrigger.start + 
+                    (currentScrollTrigger.end - currentScrollTrigger.start) * progress;
+                gsap.to(window, {
+                    scrollTo: {
+                        y: scrollPosition,
+                        autoKill: false
+                    },
+                    duration: 0.8,
+                    ease: "power2.out"
+                });
+            }
+        }
+
+        prevButton?.addEventListener("click", () => {
+            const currentProgress = currentScrollTrigger ? currentScrollTrigger.progress : 0;
+            const newProgress = Math.max(0, currentProgress - 0.2);
+            scrollToPosition(newProgress);
+        });
+
+        nextButton?.addEventListener("click", () => {
+            const currentProgress = currentScrollTrigger ? currentScrollTrigger.progress : 0;
+            const newProgress = Math.min(1, currentProgress + 0.2);
+            scrollToPosition(newProgress);
+        });
+
+        // Initialize
+        createHorizontalScroll();
+
+        // Handle resize
+        window.addEventListener("resize", () => {
+            ScrollTrigger.refresh();
+        });
+    </script>
+</body>
+</html>
