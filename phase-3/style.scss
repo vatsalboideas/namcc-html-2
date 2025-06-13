@@ -711,7 +711,7 @@ $button-pink: #c5299b;
             .card {
               width: 300px;
               display: flex;
-              align-items: center;
+              align-items: flex-start;
               justify-content: center;
               // background-color: transparent;
               .card-bottom {
@@ -720,6 +720,13 @@ $button-pink: #c5299b;
                 }
                 .card-description {
                   font-size: px-to-rem(16);
+                  margin-top: px-to-rem(10, );
+                  h3{
+                    font-size: px-to-rem(18, );
+                    span{
+                      font-size: px-to-rem(16, );
+                    }
+                  }
                 }
               }
             }
