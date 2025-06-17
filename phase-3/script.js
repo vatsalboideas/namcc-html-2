@@ -1,7 +1,6 @@
-
+AOS.init();
 
 if (window.innerWidth > 991) {
-  AOS.init();
   // const hoverSection = document.getElementById("hoverSection");
   // const followCard = document.getElementById("full-screen-hover-card");
 
