@@ -130,14 +130,14 @@ if (window.innerWidth > 991) {
   //   displacementImage: "images/7.jpg",
   //   imagesRatio: 0.429,
   // });
-  var myAnimation = new hoverEffect({
-    parent: document.querySelector(".card-middle"),
-    intensity: 0.1,
-    image1: "images/thumbnail.png",
-    image2: "images/thumbnail.png",
-    displacementImage: "images/7.jpg",
-    imagesRatio: 0.56,
-  });
+  // var myAnimation = new hoverEffect({
+  //   parent: document.querySelector(".card-middle"),
+  //   intensity: 0.01,
+  //   image1: "images/thumbnail.png",
+  //   image2: "images/thumbnail.png",
+  //   displacementImage: "images/7.jpg",
+  //   imagesRatio: 0.56,
+  // });
 
   // gsap function for hover card tilt
   const el = document.getElementById("full-screen-hover-card");

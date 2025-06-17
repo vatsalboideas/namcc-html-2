@@ -201,13 +201,13 @@ $button-pink: #c5299b;
       h2 {
         margin-top: px-to-rem(37);
         font-weight: 800;
-        font-size: px-to-rem(38);
+        font-size: px-to-rem(48);
         line-height: 150%;
         letter-spacing: px-to-rem(2);
         color: $primary-color;
       }
       p {
-        font-size: px-to-rem(18);
+        font-size: px-to-rem(28);
         font-weight: normal;
         line-height: 140%;
         color: $light-gray;
@@ -286,6 +286,10 @@ $button-pink: #c5299b;
             font-weight: 800;
             font-size: px-to-rem(25);
           }
+          .letter{
+            letter-spacing: 2px;
+            font-size: px-to-rem(48, );
+          }
           h2 {
             margin: 0;
             padding: 0;
@@ -308,13 +312,19 @@ $button-pink: #c5299b;
           width: 100%;
           height: auto;
           aspect-ratio: 16/9;
+          overflow: hidden;
+          transition: 0.5s all ease;
           .card-middle-card-image {
+            transition: 0.5s all ease;
             object-fit: cover;
+            width: 100%;
+            height: auto;
           }
         }
 
         .card-bottom {
           margin-top: px-to-rem(30);
+          padding: 0 px-to-rem(10, );
           .card-description {
             display: flex;
             align-items: center;
@@ -353,6 +363,9 @@ $button-pink: #c5299b;
           visibility: visible;
           pointer-events: auto;
         }
+         .card-middle-card-image{
+          scale: 1.1;
+         }
       }
     }
   }
@@ -1182,6 +1195,29 @@ z-index: 100;
 scale: 2;
   }
 }
+.modal{
+  .carousel-control-prev-icon, .carousel-control-next-icon{
+    position: relative;
+    z-index: 2;
+    &::before{
+      z-index: 1;
+      height: 100%;
+      width: 100%;
+      left: 0;
+      top: 0;
+      content: "";
+      position: absolute;
+      background-color: $primary-color;
+    }
+    padding: 20px;
+    // .sr-only{
+    //   z-index: 3;
+    // }
+    p{
+      font-size: px-to-rem(20, );
+    }
+  }
+}
 
 /* Video container with 16:9 aspect ratio */
 .video-container {
@@ -1298,9 +1334,13 @@ scale: 2;
               text-align: left;
               font-size: px-to-rem(18);
             }
+            .letter{
+              font-size: px-to-rem(22, );
+            }
             h2 {
               text-align: left;
-              font-size: px-to-rem(24);
+              font-size: px-to-rem(28);
+
               sup {
                 top: -0.75rem;
                 font-size: px-to-rem(10);
