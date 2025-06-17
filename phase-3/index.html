@@ -24,11 +24,26 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link href="https://vjs.zencdn.net/7.6.0/video-js.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <main class="india-weekend">
+      <header class="sticky-top">
+        <nav
+          class="navbar navbar-light bg-white align-items-center justify-content-center"
+        >
+          <a class="navbar-brand" href="#">
+            <img
+              src="images/NMACC-NYC-LOGO.svg"
+              width="100"
+              height="125"
+              alt=""
+            />
+          </a>
+        </nav>
+      </header>
       <section class="hero-section">
         <a href="#" class="hero-link">
           <picture>
@@ -36,7 +51,7 @@
               media="(max-width:991px)"
               srcset="./images/hero-mobile.png"
             />
-            <img src="./images/hero.png" alt="hero image" class="hero-image" />
+            <img src="./images/hero.jpg" alt="hero image" class="hero-image" />
           </picture>
         </a>
       </section>
@@ -79,7 +94,11 @@
                   <p>- Nita M Ambani</p>
                   <p>Founder, Nita Mukesh Ambani Cultural Centre</p>
                 </div>
-                <button class="primary-button button-white">
+                <button
+                  data-toggle="modal"
+                  data-target="#nma-about-modal"
+                  class="primary-button button-white"
+                >
                   <span> Click to view </span>
                 </button>
               </div>
@@ -103,7 +122,7 @@
             />
             <img
               src="./images/thumbnail.png"
-              class="full-screen-card-image d-block d-lg-none"
+              class="full-screen-card-image"
               srcset=""
             />
           </picture>
@@ -111,7 +130,7 @@
           <div class="hover-card" id="full-screen-hover-card">
             <div class="card-top">
               <h4>FRIDAY</h4>
-              <h2>12.09</h2>
+              <h2>12<sup>th</sup> sept</h2>
             </div>
             <div class="card-middle">
               <!-- <img
@@ -130,7 +149,11 @@
                 <h3>12pm onwards</h3>
               </div>
               <div class="class-cont">
-                <button class="primary-button button-white">
+                <button
+                  data-toggle="modal"
+                  data-target="#ctn-modal"
+                  class="primary-button button-white"
+                >
                   <span>watch now</span>
                 </button>
                 <button class="primary-button button-white">
@@ -200,8 +223,12 @@
                 <h3>Sept</h3>
               </div>
               <div class="buttons">
-                <button class="primary-button button-pink"><span>Buy Now</span></button>
-                <button class="primary-button button-pink"><span>Download</span></button>
+                <button class="primary-button button-pink">
+                  <span>Book Now</span>
+                </button>
+                <button class="primary-button button-pink">
+                  <span>Download</span>
+                </button>
               </div>
             </div>
           </div>
@@ -210,24 +237,7 @@
             <div class="horizontal">
               <div class="card-wrapper" id="scrolling-card-wrapper">
                 <!-- Day 12 - Day Cards -->
-                <div class="card day-card" id="day-12-day">
-                  <div class="card-top">
-                    <img
-                      src="./images/jewellery-card.png"
-                      alt="card-image"
-                      class="img-fluid card-img"
-                    />
-                  </div>
-                  <div class="card-bottom">
-                    <h2 class="card-title">Jewellery</h2>
-                    <div class="card-description">
-                      <h3>Venue:<span>Damrosch Park</span></h3>
-                      <h3>Time:<span>12pm onwards</span></h3>
-                    </div>
-                  </div>
-                </div>
-
-                <div
+                   <div
                   class="card day-card"
                   data-toggle="modal"
                   data-target="#exampleModalCenter"
@@ -247,6 +257,24 @@
                     </div>
                   </div>
                 </div>
+                <div class="card day-card" id="day-12-day">
+                  <div class="card-top">
+                    <img
+                      src="./images/jewellery-card.png"
+                      alt="card-image"
+                      class="img-fluid card-img"
+                    />
+                  </div>
+                  <div class="card-bottom">
+                    <h2 class="card-title">Jewellery</h2>
+                    <div class="card-description">
+                      <h3>Venue:<span>Damrosch Park</span></h3>
+                      <h3>Time:<span>12pm onwards</span></h3>
+                    </div>
+                  </div>
+                </div>
+
+              
 
                 <div class="card day-card">
                   <div class="card-top">
@@ -320,169 +348,224 @@
                 <!-- Day 13 - Day Cards -->
                 <div class="card day-card" id="day-13-day">
                   <div class="card-top">
-                    <div class="card-img day-bg">Day 13<br />Morning</div>
+                    <img
+                      src="./images/jewellery-card.png"
+                      alt="card-image"
+                      class="img-fluid card-img"
+                    />
                   </div>
                   <div class="card-bottom">
-                    <h2 class="card-title">Day 13 - Morning Fresh Start</h2>
-                    <p class="card-description">
-                      Begin your second day with fresh energy, morning
-                      meditation, and outdoor activities.
-                    </p>
+                    <h2 class="card-title">Jewellery</h2>
+                    <div class="card-description">
+                      <h3>Venue:<span>Damrosch Park</span></h3>
+                      <h3>Time:<span>12pm onwards</span></h3>
+                    </div>
                   </div>
                 </div>
 
                 <div class="card day-card">
                   <div class="card-top">
-                    <div class="card-img day-bg">Advanced<br />Workshop</div>
+                    <img
+                      src="./images/jewellery-card.png"
+                      alt="card-image"
+                      class="img-fluid card-img"
+                    />
                   </div>
                   <div class="card-bottom">
-                    <h2 class="card-title">Advanced Workshop B</h2>
-                    <p class="card-description">
-                      Take your skills to the next level with advanced
-                      techniques and expert guidance in broad daylight.
-                    </p>
+                    <h2 class="card-title">Jewellery</h2>
+                    <div class="card-description">
+                      <h3>Venue:<span>Damrosch Park</span></h3>
+                      <h3>Time:<span>12pm onwards</span></h3>
+                    </div>
                   </div>
                 </div>
 
                 <div class="card day-card">
                   <div class="card-top">
-                    <div class="card-img day-bg">Master<br />Class</div>
+                    <img
+                      src="./images/jewellery-card.png"
+                      alt="card-image"
+                      class="img-fluid card-img"
+                    />
                   </div>
                   <div class="card-bottom">
-                    <h2 class="card-title">Afternoon Masterclass</h2>
-                    <p class="card-description">
-                      Learn from industry experts in this exclusive afternoon
-                      masterclass session with hands-on activities.
-                    </p>
+                    <h2 class="card-title">Jewellery</h2>
+                    <div class="card-description">
+                      <h3>Venue:<span>Damrosch Park</span></h3>
+                      <h3>Time:<span>12pm onwards</span></h3>
+                    </div>
                   </div>
                 </div>
 
                 <!-- Day 13 - Night Cards -->
                 <div class="card night-card" id="day-13-night">
                   <div class="card-top">
-                    <div class="card-img night-bg">Day 13<br />Evening</div>
+                    <img
+                      src="./images/jewellery-card.png"
+                      alt="card-image"
+                      class="img-fluid card-img"
+                    />
                   </div>
                   <div class="card-bottom">
-                    <h2 class="card-title">Day 13 - Evening Entertainment</h2>
-                    <p class="card-description">
-                      Enjoy evening entertainment, live music, and social
-                      activities with fellow participants.
-                    </p>
+                    <h2 class="card-title">Jewellery</h2>
+                    <div class="card-description">
+                      <h3>Venue:<span>Damrosch Park</span></h3>
+                      <h3>Time:<span>12pm onwards</span></h3>
+                    </div>
                   </div>
                 </div>
 
                 <div class="card night-card">
                   <div class="card-top">
-                    <div class="card-img night-bg">Celebration<br />Party</div>
+                    <img
+                      src="./images/jewellery-card.png"
+                      alt="card-image"
+                      class="img-fluid card-img"
+                    />
                   </div>
                   <div class="card-bottom">
-                    <h2 class="card-title">Celebration Party</h2>
-                    <p class="card-description">
-                      Celebrate achievements with music, dancing, cocktails, and
-                      great company under the night sky.
-                    </p>
+                    <h2 class="card-title">Jewellery</h2>
+                    <div class="card-description">
+                      <h3>Venue:<span>Damrosch Park</span></h3>
+                      <h3>Time:<span>12pm onwards</span></h3>
+                    </div>
                   </div>
                 </div>
 
                 <div class="card night-card">
                   <div class="card-top">
-                    <div class="card-img night-bg">Night<br />Games</div>
+                    <img
+                      src="./images/jewellery-card.png"
+                      alt="card-image"
+                      class="img-fluid card-img"
+                    />
                   </div>
                   <div class="card-bottom">
-                    <h2 class="card-title">Night Games & Activities</h2>
-                    <p class="card-description">
-                      Participate in fun night games, trivia, and team building
-                      activities in a relaxed atmosphere.
-                    </p>
+                    <h2 class="card-title">Jewellery</h2>
+                    <div class="card-description">
+                      <h3>Venue:<span>Damrosch Park</span></h3>
+                      <h3>Time:<span>12pm onwards</span></h3>
+                    </div>
                   </div>
                 </div>
 
                 <!-- Day 14 - Day Cards -->
                 <div class="card day-card" id="day-14-day">
                   <div class="card-top">
-                    <div class="card-img day-bg">Day 14<br />Morning</div>
+                    <img
+                      src="./images/jewellery-card.png"
+                      alt="card-image"
+                      class="img-fluid card-img"
+                    />
                   </div>
                   <div class="card-bottom">
-                    <h2 class="card-title">Day 14 - Final Morning</h2>
-                    <p class="card-description">
-                      Final day morning activities to consolidate your learning
-                      experience and prepare for departure.
-                    </p>
+                    <h2 class="card-title">Jewellery</h2>
+                    <div class="card-description">
+                      <h3>Venue:<span>Damrosch Park</span></h3>
+                      <h3>Time:<span>12pm onwards</span></h3>
+                    </div>
                   </div>
                 </div>
 
                 <div class="card day-card">
                   <div class="card-top">
-                    <div class="card-img day-bg">Final<br />Workshop</div>
+                    <img
+                      src="./images/jewellery-card.png"
+                      alt="card-image"
+                      class="img-fluid card-img"
+                    />
                   </div>
                   <div class="card-bottom">
-                    <h2 class="card-title">Final Workshop</h2>
-                    <p class="card-description">
-                      Wrap up your learning journey with a comprehensive final
-                      workshop and skill assessment.
-                    </p>
+                    <h2 class="card-title">Jewellery</h2>
+                    <div class="card-description">
+                      <h3>Venue:<span>Damrosch Park</span></h3>
+                      <h3>Time:<span>12pm onwards</span></h3>
+                    </div>
                   </div>
                 </div>
 
                 <div class="card day-card">
                   <div class="card-top">
-                    <div class="card-img day-bg">Graduation<br />Ceremony</div>
+                    <img
+                      src="./images/food-card.png"
+                      alt="card-image"
+                      class="img-fluid card-img"
+                    />
                   </div>
                   <div class="card-bottom">
-                    <h2 class="card-title">Graduation Ceremony</h2>
-                    <p class="card-description">
-                      Celebrate your achievements in the graduation ceremony
-                      with certificate presentation.
-                    </p>
+                    <h2 class="card-title">Food</h2>
+                    <div class="card-description">
+                      <h3>Venue:<span>Damrosch Park</span></h3>
+                      <h3>Time:<span>12pm onwards</span></h3>
+                    </div>
                   </div>
                 </div>
 
                 <!-- Day 14 - Night Cards -->
                 <div class="card night-card" id="day-14-night">
                   <div class="card-top">
-                    <div class="card-img night-bg">Farewell<br />Evening</div>
+                    <img
+                      src="./images/food-card.png"
+                      alt="card-image"
+                      class="img-fluid card-img"
+                    />
                   </div>
                   <div class="card-bottom">
-                    <h2 class="card-title">Farewell Evening</h2>
-                    <p class="card-description">
-                      Say goodbye with a memorable farewell evening event,
-                      sharing memories and future plans.
-                    </p>
+                    <h2 class="card-title">Food</h2>
+                    <div class="card-description">
+                      <h3>Venue:<span>Damrosch Park</span></h3>
+                      <h3>Time:<span>12pm onwards</span></h3>
+                    </div>
                   </div>
                 </div>
 
                 <div class="card night-card">
                   <div class="card-top">
-                    <div class="card-img night-bg">Final<br />Dinner</div>
+                    <img
+                      src="./images/food-card.png"
+                      alt="card-image"
+                      class="img-fluid card-img"
+                    />
                   </div>
                   <div class="card-bottom">
-                    <h2 class="card-title">Final Dinner</h2>
-                    <p class="card-description">
-                      Enjoy a special final dinner with all participants,
-                      celebrating the journey and new friendships.
-                    </p>
+                    <h2 class="card-title">Food</h2>
+                    <div class="card-description">
+                      <h3>Venue:<span>Damrosch Park</span></h3>
+                      <h3>Time:<span>12pm onwards</span></h3>
+                    </div>
                   </div>
                 </div>
 
                 <div class="card night-card">
                   <div class="card-top">
-                    <div class="card-img night-bg">Night<br />Reflection</div>
+                    <img
+                      src="./images/food-card.png"
+                      alt="card-image"
+                      class="img-fluid card-img"
+                    />
                   </div>
                   <div class="card-bottom">
-                    <h2 class="card-title">Night Reflection</h2>
-                    <p class="card-description">
-                      End your journey with quiet reflection time, looking back
-                      on experiences and planning ahead.
-                    </p>
+                    <h2 class="card-title">Food</h2>
+                    <div class="card-description">
+                      <h3>Venue:<span>Damrosch Park</span></h3>
+                      <h3>Time:<span>12pm onwards</span></h3>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="mobile-buttons">
-            <button class="primary-button transparent-white"><span>Buy Now</span></button>
-            <button class="primary-button transparent-white"><span>Download</span></button>
+            <button class="primary-button transparent-white">
+              <span>Book Now</span>
+            </button>
+            <button class="primary-button transparent-white">
+              <span>Download</span>
+            </button>
           </div>
+          <h4 class="text-bottom">
+            FOOD | BAZAAR | MUSIC & DANCE | YOGA & WELLNESS
+          </h4>
         </div>
       </section>
       <section class="container">
@@ -529,6 +612,554 @@
           </div>
         </div>
       </section>
+
+      <section class="faq-section">
+        <section class="container">
+          <div class="text-up"></div>
+          <h2 class="title">FAQs</h2>
+          <article class="faq-box">
+            <div class="accordion" id="faq-accordion">
+              <div class="card">
+                <button
+                  class="faq-button"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">Is NMACC opening in NYC?</h2>
+                    <span class="right-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-chevron-right"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+
+                <div
+                  id="collapseOne"
+                  class="collapse show"
+                  aria-labelledby="headingOne"
+                  data-parent="#faq-accordion"
+                >
+                  <div class="card-body">
+                    The first edition of the NMACC India Weekend takes forward
+                    the vision of bringing the best of India to the world with a
+                    three-day cultural showcase! The one-of-its-kind event
+                    celebrates the finest of Indian performing arts, fashion,
+                    music, wellness, and cuisine with a host of exciting
+                    presentations. It will take place at the Lincoln Center for
+                    the Performing Arts from September 12–14, 2025.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <button
+                  class="faq-button collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapse-2"
+                  aria-expanded="false"
+                  aria-controls="collapse-2"
+                >
+                  <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                      What is the NMACC India Weekend in New York City?
+                    </h2>
+                    <span class="right-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-chevron-right"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+
+                <div
+                  id="collapse-2"
+                  class="collapse"
+                  aria-labelledby="headingOne"
+                  data-parent="#faq-accordion"
+                >
+                  <div class="card-body">
+                    NMACC India Weekend is a three-day cultural showcase
+                    celebrating the finest of Indian performing arts, fashion,
+                    music, wellness, and cuisine. It will be held from September
+                    12–14, 2025 at David H. Koch Theater and Damrosch
+                    Park,Lincoln Center for the Performing Arts, New York City.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <button
+                  class="faq-button collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapse-3"
+                  aria-expanded="true"
+                  aria-controls="collapse-3"
+                >
+                  <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                      When and where is the NMACC India Weekend happening?
+                    </h2>
+                    <span class="right-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-chevron-right"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+
+                <div
+                  id="collapse-3"
+                  class="collapse"
+                  aria-labelledby="headingOne"
+                  data-parent="#faq-accordion"
+                >
+                  <div class="card-body">
+                    NMACC India Weekend will take place from September 12-14,
+                    2025 at David H. Koch Theater and Damrosch Park, Lincoln
+                    Center for the Performing Arts, New York City. We look
+                    forward to welcoming you!
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <button
+                  class="faq-button collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapse-4"
+                  aria-expanded="true"
+                  aria-controls="collapse-4"
+                >
+                  <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                      What is the highlight of the NMACC India Weekend?
+                    </h2>
+                    <span class="right-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-chevron-right"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+
+                <div
+                  id="collapse-4"
+                  class="collapse"
+                  aria-labelledby="headingOne"
+                  data-parent="#faq-accordion"
+                >
+                  <div class="card-body">
+                    The NMACC India Weekend will premiere ‘The Great Indian
+                    Musical: Civilization to Nation,’ India’s largest ever
+                    theatrical production – amongst other thoughtfully curated
+                    cultural presentations. It will also feature a ‘Great Indian
+                    Bazaar’ - where guests will be introduced to the finest
+                    Indian fashion and textiles, authentic Indian flavours, as
+                    well as dance, yoga and music experiences.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <button
+                  class="faq-button collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapse-5"
+                  aria-expanded="true"
+                  aria-controls="collapse-5"
+                >
+                  <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                      What is 'The Great Indian Musical: Civilization to Nation'
+                      about?
+                    </h2>
+                    <span class="right-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-chevron-right"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+
+                <div
+                  id="collapse-5"
+                  class="collapse"
+                  aria-labelledby="headingOne"
+                  data-parent="#faq-accordion"
+                >
+                  <div class="card-body">
+                    India's largest theatrical production ‘The Great Indian
+                    Musical: Civilization to Nation’ is a spectacular tribute to
+                    India’s past, present and future —blending dance, art,
+                    fashion, and music. It travels the country’s history from
+                    5000 BC until its independence in 1947.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <button
+                  class="faq-button collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapse-6"
+                  aria-expanded="true"
+                  aria-controls="collapse-6"
+                >
+                  <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">Who has directed the musical?</h2>
+                    <span class="right-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-chevron-right"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+
+                <div
+                  id="collapse-6"
+                  class="collapse"
+                  aria-labelledby="headingOne"
+                  data-parent="#faq-accordion"
+                >
+                  <div class="card-body">
+                    The musical is an NMACC presentation, conceived and directed
+                    by Feroz Abbas Khan, with music by Ajay-Atul, choreography
+                    by Mayuri Upadhya, Vaibhavi Merchant, Samir &amp; Arsh
+                    Tanna, and costumes by Manish Malhotra. .
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <button
+                  class="faq-button collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapse-7"
+                  aria-expanded="true"
+                  aria-controls="collapse-7"
+                >
+                  <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                      How long will the show run and how many performers are
+                      part of the musical?
+                    </h2>
+                    <span class="right-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-chevron-right"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+
+                <div
+                  id="collapse-7"
+                  class="collapse"
+                  aria-labelledby="headingOne"
+                  data-parent="#faq-accordion"
+                >
+                  <div class="card-body">
+                    The show will have a limited run of five performances. The
+                    production features a cast of over 100 performers, stunning
+                    costumes, and grand sets. We look forward to welcoming you!
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <button
+                  class="faq-button collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapse-8"
+                  aria-expanded="true"
+                  aria-controls="collapse-8"
+                >
+                  <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                      What can one expect at Damrosch Park during the weekend?
+                    </h2>
+                    <span class="right-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-chevron-right"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+
+                <div
+                  id="collapse-8"
+                  class="collapse"
+                  aria-labelledby="headingOne"
+                  data-parent="#faq-accordion"
+                >
+                  <div class="card-body">
+                    Damrosch Park will be transformed into a ‘Great Indian
+                    Bazaar’, showcasing: Indian fashion and textiles Swadesh
+                    Experience Store Culinary experiences Dance, yoga, and music
+                    sessions Bhajans and Gita readings Performances by Shankar
+                    Mahadevan, Shreya Ghoshal, Parthiv Gohil, and Rishab Sharma
+                    Phoolon Ki Holi and Retro Nights DJ set
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <button
+                  class="faq-button collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapse-18"
+                  aria-expanded="true"
+                  aria-controls="collapse-18"
+                >
+                  <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                      Who will conduct the wellness sessions?
+                    </h2>
+                    <span class="right-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-chevron-right"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+
+                <div
+                  id="collapse-18"
+                  class="collapse"
+                  aria-labelledby="headingOne"
+                  data-parent="#faq-accordion"
+                >
+                  <div class="card-body">
+                    Eddie Stern, a renowned wellness expert, will lead daily
+                    yoga workshops. We look forward to welcoming you!
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <button
+                  class="faq-button collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapse-9"
+                  aria-expanded="true"
+                  aria-controls="collapse-9"
+                >
+                  <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                      Will there be Bollywood-themed activities?
+                    </h2>
+                    <span class="right-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-chevron-right"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+
+                <div
+                  id="collapse-9"
+                  class="collapse"
+                  aria-labelledby="headingOne"
+                  data-parent="#faq-accordion"
+                >
+                  <div class="card-body">
+                    Yes, one of India's leading dance choreograophers, Shiamak
+                    Davar and his team will conduct signature Bollywood Dance
+                    Workshops.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <button
+                  class="faq-button collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapse-10"
+                  aria-expanded="true"
+                  aria-controls="collapse-10"
+                >
+                  <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                      When do the bookings open? How can I book tickets or get
+                      more information? How much does the ticket cost?
+                    </h2>
+                    <span class="right-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-chevron-right"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+
+                <div
+                  id="collapse-10"
+                  class="collapse"
+                  aria-labelledby="headingOne"
+                  data-parent="#faq-accordion"
+                >
+                  <div class="card-body">
+                    Thank you for your interest! Tickets go on sale soon. Stay
+                    tuned!
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+      </section>
+      <section class="emailer">
+        <div class="container">
+          <div
+            class="row justify-content-start justify-content-lg-end first-row"
+          >
+            <div class="col-12 col-lg-7">
+              <h2 class="first-left-text">
+                Be the first to know about the tickets
+              </h2>
+            </div>
+            <div class="col-12 col-lg-5">
+              <div class="right">
+                <input
+                  type="email"
+                  placeholder="Enter Your Email Address"
+                /><span class="sign-up">sign up <span></span></span>
+              </div>
+            </div>
+          </div>
+          <div class="privacy-text">
+            <label class="custom-checkbox">
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+            <p>
+              * I have read, understood, and accept the Nita Mukesh Ambani
+              Cultural Centre Privacy Policy and consent to the sharing of my
+              personal data with Nita Mukesh Ambani Cultural Centre for the
+              purpose of receiving promotions, other relevant information and
+              personalized services.
+            </p>
+          </div>
+        </div>
+      </section>
+      <footer class="footer">
+        <div class="container">
+          <h2>© Copyright Nita Mukesh Ambani Cultural Centre 2025</h2>
+        </div>
+      </footer>
 
       <div
         class="modal fade bd-example-modal-xl"
@@ -598,6 +1229,9 @@
                         Excepteur sint occaecat cupidatat non proident, sunt in
                         culpa qui officia deserunt mollit anim id est laborum.
                       </p>
+                      <button class="primary-button button-white-bg mt-3">
+                        <span>Book now</span>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -607,6 +1241,106 @@
         </div>
       </div>
     </main>
+
+    <div
+      class="modal fade bd-example-modal-xl nma-modal"
+      id="nma-about-modal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="nma-about-modal"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="video-container">
+              <video
+                id="my-video-nma-modal"
+                class="video-js vjs-default-skin"
+                controls
+                loop
+                preload="auto"
+                data-setup='{"fluid": false, "responsive": true}'
+              >
+                <source
+                  src="https://res.cloudinary.com/dvfoyj8cx/video/upload/v1749051253/nmacc/NMA_CTN_NYC_TEASER_10_APPROVED_VERSION-_4_dj1wfe.mp4"
+                  type="video/mp4"
+                />
+                <p class="vjs-no-js">
+                  To view this video please enable JavaScript, and consider
+                  upgrading to a web browser that
+                  <a
+                    href="https://videojs.com/html5-video-support/"
+                    target="_blank"
+                    >supports HTML5 video</a
+                  >.
+                </p>
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade bd-example-modal-xl nma-modal ctn-modal"
+      id="ctn-modal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="ctn-modal"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="video-container">
+              <video
+                id="ctn-modal"
+                class="video-js vjs-default-skin"
+                controls
+                loop
+                  poster="./images/thumbnail.png"
+                preload="auto"
+                data-setup='{"fluid": false, "responsive": true}'
+              >
+                <source
+                  src="https://res.cloudinary.com/dvfoyj8cx/video/upload/v1749051645/nmacc/CTN_Promo__website_wof6dy.mp4"
+                  type="video/mp4"
+                />
+                <p class="vjs-no-js">
+                  To view this video please enable JavaScript, and consider
+                  upgrading to a web browser that
+                  <a
+                    href="https://videojs.com/html5-video-support/"
+                    target="_blank"
+                    >supports HTML5 video</a
+                  >.
+                </p>
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
     <script
@@ -630,6 +1364,7 @@
     <script src="./js/three.min.js"></script>
 
     <script src="./js/hover-effect.js"></script>
+    <script src="https://vjs.zencdn.net/7.6.0/video.min.js"></script>
 
     <script src="./script.js"></script>
   </body>
