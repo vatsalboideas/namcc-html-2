@@ -860,7 +860,7 @@ $button-pink: #c5299b;
         flex: 0 50%;
       }
       .top {
-        background-image: url("./images/gif-bg.png");
+        background-image: url("./images/gif-bg.jpg");
         height: 100%;
         width: 100%;
         background-position: center;
@@ -1148,7 +1148,7 @@ $button-pink: #c5299b;
 }
 
 .nma-modal .modal-content {
-  height: auto;
+  height: auto !important;
   max-height: 90vh;
   display: flex;
   flex-direction: column;
@@ -1167,6 +1167,20 @@ $button-pink: #c5299b;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  .modal-close{
+    background-color: rgba($color: #fff, $alpha: 1);
+    opacity: 0.8;
+    padding: 0 5px;
+    border-radius: 5px;
+    color: #fff;
+    outline: none;
+position: absolute;
+right: 30px;
+top: 30px;
+z-index: 100;
+scale: 2;
+  }
 }
 
 /* Video container with 16:9 aspect ratio */
