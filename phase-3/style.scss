@@ -555,7 +555,7 @@ $button-pink: #c5299b;
 
   /* Horizontal Scroll Section */
   #horizontal-scroll {
-    margin-top: px-to-rem(100, );
+    margin-top: px-to-rem(100);
     height: 100vh;
     overflow: hidden;
     position: relative;
@@ -697,6 +697,11 @@ $button-pink: #c5299b;
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
+    }
+    h4 {
+      font-size: px-to-rem(40);
+      color: #fff;
+      font-weight: 800;
     }
     .day-btn {
       outline: none;
@@ -931,7 +936,7 @@ $button-pink: #c5299b;
   }
 
   .faq-section {
-    margin-top: px-to-rem(100, );
+    margin-top: px-to-rem(100);
     position: relative;
     padding: px-to-rem(120) 0;
     .text-up {
@@ -1286,8 +1291,8 @@ $button-pink: #c5299b;
     }
 
     /* Horizontal Scroll Section */
-    #horizontal-scroll{
-      margin-top: px-to-rem(50, );
+    #horizontal-scroll {
+      margin-top: px-to-rem(50);
     }
 
     .controls {
@@ -1348,12 +1353,17 @@ $button-pink: #c5299b;
 
     .day-navigation {
       justify-content: center;
+      h4 {
+        font-size: px-to-rem(18);
+      }
       .individual-days {
         display: flex;
         gap: 1rem;
         flex-wrap: wrap;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 px-to-rem(28);
       }
       .day-btn {
         font-size: px-to-rem(18);
@@ -1369,6 +1379,7 @@ $button-pink: #c5299b;
     .horizontal-scroll-wrapper {
       padding: 0 px-to-rem(50);
       .horizontal {
+        padding: 0;
         .card-wrapper {
           gap: px-to-rem(40);
           padding: 0;
