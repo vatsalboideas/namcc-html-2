@@ -900,7 +900,7 @@ $button-pink: #c5299b;
           left: 0;
           width: 100%;
           height: 100%;
-          background-color: rgba($color: #000000, $alpha: 0.3);
+          background-color: rgba($color: #000000, $alpha: 0.7);
           z-index: 1;
         }
       }
@@ -924,6 +924,19 @@ $button-pink: #c5299b;
           line-height: 140%;
           color: #fff;
           margin-top: px-to-rem(30);
+        }
+        a{
+          cursor: pointer;
+          text-decoration: underline;
+          display: block;
+          margin: 0;
+          padding: 0;
+          font-size: px-to-rem(16);
+          font-weight: 400;
+          line-height: 140%;
+          color: #fff;
+          margin-top: px-to-rem(30);
+
         }
       }
     }
@@ -1477,6 +1490,7 @@ $button-pink: #c5299b;
           padding: px-to-rem(40) px-to-rem(20) px-to-rem(20);
           h2 {
             font-size: px-to-rem(18);
+            letter-spacing: 1px;
           }
           p {
             font-size: px-to-rem(16);
