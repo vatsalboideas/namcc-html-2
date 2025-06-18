@@ -503,7 +503,7 @@ function createHorizontalScroll() {
       pin: true,
       start: "center-=50px center",
       scrub: 1,
-      markers:true,
+      // markers:true,
       end: () => `+=${scrollingCardWrapper.scrollWidth - window.innerWidth}`,
       invalidateOnRefresh: true,
       onUpdate: (self) => {
