@@ -186,22 +186,22 @@ if (window.innerWidth > 991) {
   el.addEventListener("mouseleave", onMouseLeave);
 }
 
-let lastScrollTop = 0;
-const header = document.querySelector("header");
+// let lastScrollTop = 0;
+// const header = document.querySelector("header");
 
-window.addEventListener("scroll", function () {
-  const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+// window.addEventListener("scroll", function () {
+//   const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
-  if (currentScroll > lastScrollTop) {
-    // Scrolling down
-    header.style.transform = "translateY(-100%)";
-  } else {
-    // Scrolling up
-    header.style.transform = "translateY(0)";
-  }
+//   if (currentScroll > lastScrollTop) {
+//     // Scrolling down
+//     header.style.transform = "translateY(-100%)";
+//   } else {
+//     // Scrolling up
+//     header.style.transform = "translateY(0)";
+//   }
 
-  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For mobile
-});
+//   lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For mobile
+// });
 
 
 // const scrollignCardsContainer = document.getElementById(
@@ -501,9 +501,9 @@ function createHorizontalScroll() {
     scrollTrigger: {
       trigger: "#horizontal-scroll",
       pin: true,
-      start: "center center",
+      start: "center-=50px center",
       scrub: 1,
-      // markers:true,
+      markers:true,
       end: () => `+=${scrollingCardWrapper.scrollWidth - window.innerWidth}`,
       invalidateOnRefresh: true,
       onUpdate: (self) => {
@@ -736,9 +736,9 @@ $(document).ready(function () {
     let videoHeight = videoWidth * (9 / 16);
 
     // If calculated height exceeds max height, adjust based on height
-    if (videoHeight > maxModalHeight - 60) {
+    if (videoHeight > maxModalHeight - 100) {
       // 60px buffer for header
-      videoHeight = maxModalHeight - 60;
+      videoHeight = maxModalHeight - 100;
       videoWidth = videoHeight * (16 / 9);
     }
 
@@ -749,7 +749,7 @@ $(document).ready(function () {
     });
 
     modalContent.css({
-      height: videoHeight + 60 + "px", // Add header height
+      height: videoHeight + 100 + "px", // Add header height
     });
 
     // For very short screens, make additional adjustments

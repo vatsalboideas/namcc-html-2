@@ -217,7 +217,7 @@ $button-pink: #c5299b;
     }
     .fullscreen-hover-card {
       height: auto;
-      aspect-ratio: 16/9;
+      aspect-ratio: 24/11;
       width: 100%;
       margin-top: px-to-rem(70);
       position: relative;
@@ -229,7 +229,7 @@ $button-pink: #c5299b;
       .full-screen-card-image {
         width: 100%;
         height: auto;
-        aspect-ratio: 16/9;
+        aspect-ratio: 24/11;
         object-fit: cover;
       }
 
@@ -311,7 +311,7 @@ $button-pink: #c5299b;
           margin-top: px-to-rem(30);
           width: 100%;
           height: auto;
-          aspect-ratio: 16/9;
+          aspect-ratio: 24/11;
           overflow: hidden;
           transition: 0.5s all ease;
           .card-middle-card-image {
@@ -355,6 +355,11 @@ $button-pink: #c5299b;
             column-gap: px-to-rem(10);
           }
         }
+        &:hover{
+           .card-middle-card-image{
+          scale: 1.1;
+         }
+        }
       }
 
       &:hover {
@@ -363,9 +368,7 @@ $button-pink: #c5299b;
           visibility: visible;
           pointer-events: auto;
         }
-         .card-middle-card-image{
-          scale: 1.1;
-         }
+        
       }
     }
   }
@@ -574,7 +577,7 @@ $button-pink: #c5299b;
   /* Horizontal Scroll Section */
   #horizontal-scroll {
     margin-top: px-to-rem(100);
-    height: 100vh;
+    height: calc(100vh - 100px);
     overflow: hidden;
     position: relative;
     background-image: url("./images/gif-bg.jpg");
