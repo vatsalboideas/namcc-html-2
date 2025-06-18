@@ -1318,6 +1318,7 @@ scale: 2;
       }
       .fullscreen-hover-card {
         margin-top: px-to-rem(30);
+        aspect-ratio: auto;
 
         .full-screen-card-image {
           width: 100%;
@@ -1331,6 +1332,8 @@ scale: 2;
           opacity: 1;
           visibility: visible;
           position: relative;
+          top: px-to-rem(130);
+          // padding-bottom: px-to-rem(25, );
 
           .card-top {
             h4 {
@@ -1356,12 +1359,14 @@ scale: 2;
           }
 
           .card-bottom {
+            padding: 0;
             .card-description {
               h2 {
-                font-size: px-to-rem(16);
+                font-size: px-to-rem(22);
               }
               h3 {
-                font-size: px-to-rem(14);
+                font-size: px-to-rem(22);
+                font-weight: 500;
               }
             }
           }
