@@ -504,7 +504,7 @@
   position: relative;
 }
 .india-weekend .horizontal-scroll-wrapper .horizontal {
-  padding: 0 6.25rem;
+  padding: 0;
   display: flex;
   height: 100%;
   will-change: transform;
@@ -513,7 +513,7 @@
 .india-weekend .horizontal-scroll-wrapper .horizontal .card-wrapper {
   display: flex;
   gap: 11.25rem;
-  padding: 2rem;
+  padding: 2rem 6.25rem 2rem 9.375rem;
   align-items: stretch;
   height: -moz-fit-content;
   height: fit-content;
@@ -573,11 +573,18 @@
   font-size: 1.3125rem;
   font-weight: 600;
   color: #ff00b4;
+  margin: 0;
 }
 .india-weekend .horizontal-scroll-wrapper .horizontal .card-wrapper .card .card-description h3 span {
   margin-left: 0.625rem;
   font-weight: 500;
   color: #000;
+}
+.india-weekend .horizontal-scroll-wrapper .horizontal .card-wrapper .card .card-description .time-icons {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  justify-content: space-between;
 }
 .india-weekend .horizontal-scroll-wrapper .horizontal .card-wrapper .card .card-description .time-icons .icon {
   height: 30px;

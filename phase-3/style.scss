@@ -765,7 +765,7 @@ $button-pink: #ff00b4;
     z-index: 3;
     position: relative;
     .horizontal {
-      padding: 0 px-to-rem(100);
+      padding: 0;
       display: flex;
       height: 100%;
       will-change: transform;
@@ -773,7 +773,7 @@ $button-pink: #ff00b4;
       .card-wrapper {
         display: flex;
         gap: px-to-rem(180);
-        padding: 2rem;
+        padding: 2rem px-to-rem(100) 2rem px-to-rem(150);
         align-items: stretch;
         height: fit-content;
         .card {
@@ -848,6 +848,7 @@ $button-pink: #ff00b4;
               font-size: px-to-rem(21);
               font-weight: 600;
               color: $primary-color;
+              margin: 0;
               span {
                 margin-left: px-to-rem(10);
                 font-weight: 500;
@@ -855,6 +856,10 @@ $button-pink: #ff00b4;
               }
             }
             .time-icons{
+              display: flex;
+              align-items: flex-end;
+              gap: 5px;
+              justify-content: space-between;
               .icon{
                 height: 30px;
                 width: 30px;
