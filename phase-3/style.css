@@ -44,7 +44,7 @@
   top: 0;
   width: 0%;
   height: 100%;
-  background-color: #c5299b;
+  background-color: #ff00b4;
   z-index: 0;
   transition: width 0.4s ease;
   z-index: 1;
@@ -61,7 +61,7 @@
   border-color: #fff;
 }
 .india-weekend .button-white:hover {
-  color: #c5299b;
+  color: #ff00b4;
 }
 .india-weekend .button-white::before {
   background-color: #fff;
@@ -521,7 +521,7 @@
 .india-weekend .horizontal-scroll-wrapper .horizontal .card-wrapper .card {
   flex-shrink: 0;
   width: 43vh;
-  max-width: 450px;
+  max-width: 410px;
   background: #fff;
   border: none;
   border-radius: 0;
@@ -550,8 +550,9 @@
   border-radius: 0;
 }
 .india-weekend .horizontal-scroll-wrapper .horizontal .card-wrapper .card .card-bottom {
+  margin-top: -5px;
   padding: 1.5rem;
-  height: 40%;
+  height: -webkit-fill-available;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -560,11 +561,16 @@
   color: #ff00b4;
   text-transform: capitalize;
   padding: 0;
-  font-size: 1.625rem;
+  font-size: 1.5rem;
   font-weight: 700;
 }
+.india-weekend .horizontal-scroll-wrapper .horizontal .card-wrapper .card .card-description {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .india-weekend .horizontal-scroll-wrapper .horizontal .card-wrapper .card .card-description h3 {
-  font-size: 1.4375rem;
+  font-size: 1.3125rem;
   font-weight: 600;
   color: #ff00b4;
 }
@@ -572,6 +578,19 @@
   margin-left: 0.625rem;
   font-weight: 500;
   color: #000;
+}
+.india-weekend .horizontal-scroll-wrapper .horizontal .card-wrapper .card .card-description .time-icons .icon {
+  height: 30px;
+  width: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.india-weekend .horizontal-scroll-wrapper .horizontal .card-wrapper .card .card-description .time-icons .day-icon {
+  background-image: url("./images/morning-pink.svg");
+}
+.india-weekend .horizontal-scroll-wrapper .horizontal .card-wrapper .card .card-description .time-icons .evening-icon {
+  background-image: url("./images/evening-pink.svg");
 }
 .india-weekend .show-card-modal .modal-body {
   padding: 0;
@@ -904,12 +923,14 @@
   scale: 2;
 }
 
-.modal .carousel-control-prev-icon, .modal .carousel-control-next-icon {
+.modal .carousel-control-prev-icon,
+.modal .carousel-control-next-icon {
   position: relative;
   z-index: 2;
   padding: 20px;
 }
-.modal .carousel-control-prev-icon::before, .modal .carousel-control-next-icon::before {
+.modal .carousel-control-prev-icon::before,
+.modal .carousel-control-next-icon::before {
   z-index: 1;
   height: 100%;
   width: 100%;
@@ -919,7 +940,8 @@
   position: absolute;
   background-color: #ff00b4;
 }
-.modal .carousel-control-prev-icon p, .modal .carousel-control-next-icon p {
+.modal .carousel-control-prev-icon p,
+.modal .carousel-control-next-icon p {
   font-size: 1.25rem;
 }
 
